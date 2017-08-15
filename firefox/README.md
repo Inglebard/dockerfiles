@@ -20,13 +20,13 @@ This image was created to have sound with firefox on archlinux and pulseaudio.
 
 ### Environnment variables :
 You need to specify display variable and pulse audio variable :
-*DISPLAY
-*PULSE_SERVER
+* DISPLAY
+* PULSE_SERVER
 
 ### Volumes :
 You need to specify X11 variable and pulse audio variable :
-*/run/user/1000/pulse
-*/tmp/.X11-unix
+* /run/user/1000/pulse
+* /tmp/.X11-unix
 
 
 ## How to use this image :
