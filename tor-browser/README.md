@@ -43,5 +43,5 @@ inglebard/tor-browser
 
 ## Thanks
 This image was created from 
-"Jessie Frazelle <jess@linux.com>" https://hub.docker.com/r/jess/tor-browser/
-"Guy Taylor <thebigguy.co.uk@gmail.com>" https://github.com/TheBiggerGuy/docker-pulseaudio-example
+* "Jessie Frazelle <jess@linux.com>" https://hub.docker.com/r/jess/tor-browser/
+* "Guy Taylor <thebigguy.co.uk@gmail.com>" https://github.com/TheBiggerGuy/docker-pulseaudio-example
