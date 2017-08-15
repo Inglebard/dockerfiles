@@ -9,6 +9,7 @@
 FROM debian:stretch
 
 #original dockerfile from "Jessie Frazelle <jess@linux.com>" https://hub.docker.com/r/jess/tor-browser/
+# and Guy Taylor <thebigguy.co.uk@gmail.com> https://github.com/TheBiggerGuy/docker-pulseaudio-example
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 RUN apt-get update && apt-get install -y \
@@ -58,6 +59,9 @@ COPY local.conf /etc/fonts/local.conf
 
 WORKDIR $HOME
 USER user
+
+#debug
+#CMD ["pacat", "-vvvv", "/dev/urandom"]
 
 ENTRYPOINT ["/bin/bash"]
 CMD [ "/usr/local/bin/Browser/start-tor-browser", "--log", "/dev/stdout" ]
