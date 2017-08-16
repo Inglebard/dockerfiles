@@ -12,6 +12,7 @@ FROM debian:stretch
 # and Guy Taylor <thebigguy.co.uk@gmail.com> https://github.com/TheBiggerGuy/docker-pulseaudio-example
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
+# add pulseaudio-utils for pacat
 RUN apt-get update && apt-get install -y \
 	ca-certificates \
 	curl \
@@ -24,7 +25,7 @@ RUN apt-get update && apt-get install -y \
 	libx11-xcb-dev \
 	libx11-xcb1 \
 	libxt6 \
-	pulseaudio-utils \
+	libpulse0 \
 	xz-utils \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
@@ -51,8 +52,8 @@ RUN cd /tmp \
 	&& rm -rf tor-browser* \
 	&& rm -rf ~/.gnupg
 
-
-COPY pulse-client.conf /etc/pulse/client.conf
+# Not sure if usefull with PULSE_SERVER
+# COPY pulse-client.conf /etc/pulse/client.conf
 
 # good fonts
 COPY local.conf /etc/fonts/local.conf
