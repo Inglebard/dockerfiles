@@ -12,6 +12,7 @@ FROM debian:stretch
 # and Guy Taylor <thebigguy.co.uk@gmail.com> https://github.com/TheBiggerGuy/docker-pulseaudio-example
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
+# add pulseaudio-utils for pacat
 RUN apt-get update && apt-get install -y \
 	ca-certificates \
 	curl \
@@ -26,7 +27,7 @@ RUN apt-get update && apt-get install -y \
 	libx11-xcb-dev \
 	libx11-xcb1 \
 	libxt6 \
-	pulseaudio-utils \
+	libpulse0 \
 	bzip2 \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
@@ -45,8 +46,9 @@ RUN cd /tmp \
 	&& curl -sSOL "https://download-installer.cdn.mozilla.net/pub/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/en-US/firefox-${FIREFOX_VERSION}.tar.bz2" \
 	&& tar -vxj -C /usr/local/bin -f firefox-${FIREFOX_VERSION}.tar.bz2 \
 	&& rm -rf firefox-${FIREFOX_VERSION}.tar.bz2 
-
-COPY pulse-client.conf /etc/pulse/client.conf
+	
+# Not sure if usefull
+# COPY pulse-client.conf /etc/pulse/client.conf
 
 # good fonts
 COPY local.conf /etc/fonts/local.conf
