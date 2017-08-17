@@ -2,6 +2,7 @@
 #
 # docker run -t -i --rm --volume=/run/user/1000/pulse:/run/user/1000/pulse \
 # -v /tmp/.X11-unix:/tmp/.X11-unix \
+# -v /dev/shm:/dev/shm \
 # -e DISPLAY=unix$DISPLAY \
 # -e PULSE_SERVER=unix:/run/user/1000/pulse/native \
 # inglebard/firefox
@@ -29,6 +30,7 @@ RUN apt-get update && apt-get install -y \
 	libxt6 \
 	libpulse0 \
 	bzip2 \
+	libcanberra-gtk3-module \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
 
