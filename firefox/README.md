@@ -27,6 +27,7 @@ You need to specify display variable and pulse audio variable :
 You need to specify X11 variable and pulse audio variable :
 * /run/user/1000/pulse
 * /tmp/.X11-unix
+* /dev/shm
 
 
 ## How to use this image :
@@ -35,6 +36,7 @@ You can run this image like this:
 ```
 docker run -t -i --rm -v /run/user/1000/pulse:/run/user/1000/pulse \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
+-v /dev/shm:/dev/shm \
 -e DISPLAY=unix$DISPLAY \
 -e PULSE_SERVER=unix:/run/user/1000/pulse/native \
 inglebard/firefox
