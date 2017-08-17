@@ -2,6 +2,7 @@
 #
 # docker run -t -i --rm --volume=/run/user/1000/pulse:/run/user/1000/pulse \
 # -v /tmp/.X11-unix:/tmp/.X11-unix \
+# -v /dev/shm:/dev/shm \
 # -e DISPLAY=unix$DISPLAY \
 # -e PULSE_SERVER=unix:/run/user/1000/pulse/native \
 # inglebard/tor-browser
@@ -26,6 +27,7 @@ RUN apt-get update && apt-get install -y \
 	libx11-xcb1 \
 	libxt6 \
 	libpulse0 \
+	libcanberra-gtk-module \
 	xz-utils \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
@@ -42,13 +44,15 @@ ENV TOR_FINGERPRINT 0x4E2C6E8793298290
 
 # download tor and check signature
 RUN cd /tmp \
+	&& mkdir /opt/tor-browser \
+	&& chmod 1777 /opt/tor-browser \
 	&& curl -sSOL "https://www.torproject.org/dist/torbrowser/${TOR_VERSION}/tor-browser-linux64-${TOR_VERSION}_en-US.tar.xz" \
 	&& curl -sSOL "https://www.torproject.org/dist/torbrowser/${TOR_VERSION}/tor-browser-linux64-${TOR_VERSION}_en-US.tar.xz.asc" \
 	&& mkdir ~/.gnupg \
 	&& gpg --no-tty --keyserver "hkp://pool.sks-keyservers.net" --recv-keys ${TOR_FINGERPRINT} \
 	&& gpg --fingerprint --keyid-format LONG ${TOR_FINGERPRINT} | grep "Key fingerprint = EF6E 286D DA85 EA2A 4BA7  DE68 4E2C 6E87 9329 8290" \
 	&& gpg --verify tor-browser-linux64-${TOR_VERSION}_en-US.tar.xz.asc \
-	&& tar -vxJ --strip-components 1 -C /usr/local/bin -f tor-browser-linux64-${TOR_VERSION}_en-US.tar.xz \
+	&& tar -vxJ --strip-components 1 -C /opt/tor-browser -f tor-browser-linux64-${TOR_VERSION}_en-US.tar.xz \
 	&& rm -rf tor-browser* \
 	&& rm -rf ~/.gnupg
 
@@ -65,4 +69,4 @@ USER user
 #CMD ["pacat", "-vvvv", "/dev/urandom"]
 
 ENTRYPOINT ["/bin/bash"]
-CMD [ "/usr/local/bin/Browser/start-tor-browser", "--log", "/dev/stdout" ]
+CMD [ "/opt/tor-browser/Browser/start-tor-browser", "--log", "/dev/stdout" ]
