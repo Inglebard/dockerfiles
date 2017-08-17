@@ -46,7 +46,7 @@ ENV FIREFOX_VERSION 55.0.2
 # download tor and check signature
 RUN cd /tmp \
 	&& curl -sSOL "https://download-installer.cdn.mozilla.net/pub/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/en-US/firefox-${FIREFOX_VERSION}.tar.bz2" \
-	&& tar -vxj -C /usr/local/bin -f firefox-${FIREFOX_VERSION}.tar.bz2 \
+	&& tar -vxj -C /opt -f firefox-${FIREFOX_VERSION}.tar.bz2 \
 	&& rm -rf firefox-${FIREFOX_VERSION}.tar.bz2 
 	
 # Not sure if usefull
@@ -60,4 +60,4 @@ USER user
 
 #debug
 #CMD ["pacat", "-vvvv", "/dev/urandom"]
-ENTRYPOINT [ "/usr/local/bin/firefox/firefox" ]
+ENTRYPOINT [ "/opt/firefox/firefox" ]
