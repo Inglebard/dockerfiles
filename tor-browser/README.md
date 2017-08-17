@@ -27,7 +27,7 @@ You need to specify display variable and pulse audio variable :
 You need to specify X11 variable and pulse audio variable :
 * /run/user/1000/pulse
 * /tmp/.X11-unix
-
+* /dev/shm
 
 ## How to use this image :
 
