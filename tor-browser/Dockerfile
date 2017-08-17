@@ -22,6 +22,8 @@ RUN apt-get update && apt-get install -y \
 	libasound2 \
 	libdbus-glib-1-2 \
 	libgtk2.0-0 \
+	libgl1-mesa-dri \
+	libgl1-mesa-glx \
 	libxrender1 \
 	libx11-xcb-dev \
 	libx11-xcb1 \
