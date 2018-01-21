@@ -41,7 +41,7 @@ RUN useradd --create-home --home-dir $HOME user \
 ENV LANG C.UTF-8
 
 #https://download-installer.cdn.mozilla.net/pub/firefox/releases/
-ENV FIREFOX_VERSION 57.0.4
+ENV FIREFOX_VERSION 58.0
 
 # download tor and check signature
 RUN cd /tmp \
