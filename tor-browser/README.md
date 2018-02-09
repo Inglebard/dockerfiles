@@ -25,7 +25,7 @@ You need to specify display variable and pulse audio variable :
 
 ### Volumes :
 You need to specify X11 variable and pulse audio variable :
-* /run/user/1000/pulse
+* $XDG_RUNTIME_DIR/pulse (/run/user/1000/pulse)
 * /tmp/.X11-unix
 * /dev/shm
 
