@@ -33,11 +33,11 @@ You need to specify X11 variable and pulse audio variable :
 
 You can run this image like this:
 ```
-docker run -t -i --rm -v /run/user/1000/pulse:/run/user/1000/pulse \
+docker run -t -i --rm -v $XDG_RUNTIME_DIR/pulse:$XDG_RUNTIME_DIR/pulse \
 -v /tmp/.X11-unix:/tmp/.X11-unix \
 -v /dev/shm:/dev/shm \
 -e DISPLAY=unix$DISPLAY \
--e PULSE_SERVER=unix:/run/user/1000/pulse/native \
+-e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \
 inglebard/tor-browser
 
 ```
