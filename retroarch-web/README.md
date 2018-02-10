@@ -1,7 +1,7 @@
-# Docker image inglebard/archretro-web
-Self-hosted archretro web player.
-[Github](https://github.com/Inglebard/dockerfiles/blob/master/archretro-web/)
-[Dockerhub](https://hub.docker.com/r/inglebard/archretro-web/)
+# Docker image inglebard/retroarch-web
+Self-hosted retroarch web player.
+[Github](https://github.com/Inglebard/dockerfiles/blob/master/retroarch-web/)
+[Dockerhub](https://hub.docker.com/r/inglebard/retroarch-web/)
 
 ## Why use this image :
 
@@ -22,7 +22,7 @@ You may need to mount game folder
 
 You can run this image like this:
 ```
-docker run --rm -it -p 8080:80 archretro-web
+docker run --rm -it -p 8080:80 retroarch-web
 
 ```
 
