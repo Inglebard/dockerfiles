@@ -1,6 +1,6 @@
 # Run RetroArch Web Player in a container
 #
-# docker run --rm -it -p 8080:80 archretro-web
+# docker run --rm -it -p 8080:80 retroarch-web
 #
 FROM debian:stretch
 
@@ -27,9 +27,9 @@ RUN cd /var/www/html \
 	&& 7z e -y RetroArch.7z \
 	&& sed -i '/<script src="analytics.js"><\/script>/d' ./index.html \
 	&& sed -i -e 's/bot.libretro.com\/web\/browserfs.min.js/bot.libretro.com\/.web\/browserfs.min.js/g' ./index.html \
-	&& mkdir -p /usr/share/nginx/html/assets/frontend \
-	&& mkdir -p /usr/share/nginx/html/assets/cores \
-	&& cd /usr/share/nginx/html/assets/frontend \
+	&& mkdir -p /var/www/html/assets/frontend \
+	&& mkdir -p /var/www/html/assets/cores \
+	&& cd /var/www/html/assets/frontend \
 	&& wget https://buildbot.libretro.com/assets/frontend/bundle.zip \
 	&& unzip bundle.zip
 
