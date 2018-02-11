@@ -21,21 +21,24 @@ RUN apt-get update && apt-get install -y \
 # https://github.com/libretro/RetroArch/tree/master/pkg/emscripten
 # https://buildbot.libretro.com/nightly/
 
-RUN cd /var/www/html \
+ENV ROOT_WWW_PATH /var/www/html
+
+
+RUN cd ${ROOT_WWW_PATH} \
 	&& wget https://buildbot.libretro.com/nightly/emscripten/$(date +%Y-%m-%d)_RetroArch.7z \
 	&& 7z e -y $(date +%Y-%m-%d)_RetroArch.7z \
 	&& sed -i '/<script src="analytics.js"><\/script>/d' ./index.html \
 	&& chmod +x indexer \
-	&& mkdir -p /var/www/html/assets/frontend \
-	&& mkdir -p /var/www/html/assets/cores \
-	&& cd /var/www/html/assets/frontend \
+	&& mkdir -p ${ROOT_WWW_PATH}/assets/frontend \
+	&& mkdir -p ${ROOT_WWW_PATH}/assets/cores \
+	&& cd ${ROOT_WWW_PATH}/assets/frontend \
 	&& wget https://buildbot.libretro.com/assets/frontend/bundle.zip \
 	&& unzip bundle.zip \
-	&& cd /var/www/html \
+	&& cd ${ROOT_WWW_PATH} \
 	&& ./indexer ./assets/frontend > ./assets/frontend/.index-xhr \
 	&& ./indexer ./assets/cores > ./assets/cores/.index-xhr
 
-WORKDIR /var/www/html
+WORKDIR ${ROOT_WWW_PATH}
 
 EXPOSE 80
 
