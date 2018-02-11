@@ -28,7 +28,7 @@ RUN cd ${ROOT_WWW_PATH} \
 	&& wget https://buildbot.libretro.com/stable/${RETROARCH_VERSION}/emscripten/RetroArch.7z \
 	&& 7z e -y RetroArch.7z \
 	&& sed -i '/<script src="analytics.js"><\/script>/d' ./index.html \
-	&& sed -i -e 's/bot.libretro.com\/web\/browserfs.min.js/bot.libretro.com\/.web\/browserfs.min.js/g' ./index.html \
+	&& sed -i -e 's/bot.libretro.com\/web\/browserfs.min.js/bot.libretro.com\/.web\/browserfs.min.js/g' ./index.html 
 	# && mkdir -p ${ROOT_WWW_PATH}/assets/frontend \
 	# && mkdir -p ${ROOT_WWW_PATH}/assets/cores \
 	# && cd ${ROOT_WWW_PATH}/assets/frontend \
