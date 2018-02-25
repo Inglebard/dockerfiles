@@ -33,10 +33,13 @@ RUN cd ${ROOT_WWW_PATH} \
 	&& mkdir -p ${ROOT_WWW_PATH}/assets/cores \
 	&& cd ${ROOT_WWW_PATH}/assets/frontend \
 	&& wget https://buildbot.libretro.com/assets/frontend/bundle.zip \
-	&& unzip bundle.zip \
-	&& cd ${ROOT_WWW_PATH} \
-	&& ./indexer ./assets/frontend > ./assets/frontend/.index-xhr \
-	&& ./indexer ./assets/cores > ./assets/cores/.index-xhr
+	&& unzip bundle.zip -d bundle \
+	&& cd ${ROOT_WWW_PATH}/assets/frontend/bundle \
+	&& ../../../indexer > .index-xhr \
+        && cd ${ROOT_WWW_PATH}/assets/cores \
+        && ../../indexer > .index-xhr
+	#&& ./indexer ./assets/frontend > ./assets/frontend/.index-xhr \
+	#&& ./indexer ./assets/cores > ./assets/cores/.index-xhr
 
 WORKDIR ${ROOT_WWW_PATH}
 
