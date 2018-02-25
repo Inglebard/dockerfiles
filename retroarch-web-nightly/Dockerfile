@@ -38,8 +38,6 @@ RUN cd ${ROOT_WWW_PATH} \
 	&& ../../../indexer > .index-xhr \
         && cd ${ROOT_WWW_PATH}/assets/cores \
         && ../../indexer > .index-xhr
-	#&& ./indexer ./assets/frontend > ./assets/frontend/.index-xhr \
-	#&& ./indexer ./assets/cores > ./assets/cores/.index-xhr
 
 WORKDIR ${ROOT_WWW_PATH}
 
