@@ -36,8 +36,8 @@ RUN cd ${ROOT_WWW_PATH} \
 	&& unzip bundle.zip -d bundle \
 	&& cd ${ROOT_WWW_PATH}/assets/frontend/bundle \
 	&& ../../../indexer > .index-xhr \
-        && cd ${ROOT_WWW_PATH}/assets/cores \
-        && ../../indexer > .index-xhr
+    && cd ${ROOT_WWW_PATH}/assets/cores \
+    && ../../indexer > .index-xhr
 
 WORKDIR ${ROOT_WWW_PATH}
 

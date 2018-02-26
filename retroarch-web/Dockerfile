@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 
 # https://github.com/libretro/RetroArch/tree/master/pkg/emscripten
 # https://buildbot.libretro.com/stable/
-ENV RETROARCH_VERSION 1.7.0
+ENV RETROARCH_VERSION 1.7.1
 ENV ROOT_WWW_PATH /var/www/html
 
 
@@ -28,12 +28,16 @@ RUN cd ${ROOT_WWW_PATH} \
 	&& wget https://buildbot.libretro.com/stable/${RETROARCH_VERSION}/emscripten/RetroArch.7z \
 	&& 7z e -y RetroArch.7z \
 	&& sed -i '/<script src="analytics.js"><\/script>/d' ./index.html \
-	&& sed -i -e 's/bot.libretro.com\/web\/browserfs.min.js/bot.libretro.com\/.web\/browserfs.min.js/g' ./index.html 
-	# && mkdir -p ${ROOT_WWW_PATH}/assets/frontend \
-	# && mkdir -p ${ROOT_WWW_PATH}/assets/cores \
-	# && cd ${ROOT_WWW_PATH}/assets/frontend \
-	# && wget https://buildbot.libretro.com/assets/frontend/bundle.zip \
-	# && unzip bundle.zip
+	&& chmod +x indexer \
+	&& mkdir -p ${ROOT_WWW_PATH}/assets/frontend \
+	&& mkdir -p ${ROOT_WWW_PATH}/assets/cores \
+	&& cd ${ROOT_WWW_PATH}/assets/frontend \
+	&& wget https://buildbot.libretro.com/assets/frontend/bundle.zip \
+	&& unzip bundle.zip -d bundle \
+	&& cd ${ROOT_WWW_PATH}/assets/frontend/bundle \
+	&& ../../../indexer > .index-xhr \
+    && cd ${ROOT_WWW_PATH}/assets/cores \
+    && ../../indexer > .index-xhr
 
 WORKDIR ${ROOT_WWW_PATH}
 
