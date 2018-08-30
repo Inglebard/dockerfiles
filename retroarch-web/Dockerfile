@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 
 # https://github.com/libretro/RetroArch/tree/master/pkg/emscripten
 # https://buildbot.libretro.com/stable/
-ENV RETROARCH_VERSION 1.7.3
+ENV RETROARCH_VERSION 1.7.4
 ENV ROOT_WWW_PATH /var/www/html
 
 
