@@ -22,7 +22,7 @@ You may need to mount game folder
 
 You can run this image like this:
 ```
-docker run --rm -it -p 8080:80 retroarch-web-nightly
+docker run --rm -it -p 8080:80 inglebard/retroarch-web-nightly
 
 ```
 
