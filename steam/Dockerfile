@@ -6,8 +6,8 @@
 # inglebard/steam
 #
 
-# This images was tested with opensource driver. Amd or nvidia drivers may failed
-# Require ubuntu 18.04, issue with 16.04 and debconf-set-selections
+# This image was tested with opensource driver. AMD or NVIDIA drivers may failed
+# Require ubuntu 18.04, issue with 16.04 and debconf-set-selections with docker
 FROM ubuntu
 
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
