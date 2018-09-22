@@ -41,11 +41,12 @@ RUN useradd --create-home --home-dir $HOME user \
 ENV LANG C.UTF-8
 
 #https://download-installer.cdn.mozilla.net/pub/firefox/releases/
-ENV FIREFOX_VERSION 62.0
+ENV FIREFOX_VERSION 62.0.2
+ENV FIREFOX_LANG en-US
 
 # download tor and check signature
 RUN cd /tmp \
-	&& curl -sSOL "https://download-installer.cdn.mozilla.net/pub/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/en-US/firefox-${FIREFOX_VERSION}.tar.bz2" \
+	&& curl -sSOL "https://download-installer.cdn.mozilla.net/pub/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/${FIREFOX_LANG}/firefox-${FIREFOX_VERSION}.tar.bz2" \
 	&& tar -vxj -C /opt -f firefox-${FIREFOX_VERSION}.tar.bz2 \
 	&& rm -rf firefox-${FIREFOX_VERSION}.tar.bz2 
 	
