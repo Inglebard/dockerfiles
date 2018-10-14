@@ -1,6 +1,6 @@
 # Run RetroArch Web Player in a container
 #
-# docker run --rm -it -p 8080:80 retroarch-web
+# docker run --rm -it -p 8080:80 inglebard/retroarch-web
 #
 FROM debian:stretch
 
