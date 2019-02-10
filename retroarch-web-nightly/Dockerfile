@@ -28,6 +28,7 @@ RUN cd ${ROOT_WWW_PATH} \
 	&& wget https://buildbot.libretro.com/nightly/emscripten/$(date +%Y-%m-%d)_RetroArch.7z \
 	&& 7z e -y $(date +%Y-%m-%d)_RetroArch.7z \
 	&& sed -i '/<script src="analytics.js"><\/script>/d' ./index.html \
+	&& cp canvas.png media/canvas.png \
 	&& chmod +x indexer \
 	&& mkdir -p ${ROOT_WWW_PATH}/assets/frontend \
 	&& mkdir -p ${ROOT_WWW_PATH}/assets/cores \
@@ -36,8 +37,12 @@ RUN cd ${ROOT_WWW_PATH} \
 	&& unzip bundle.zip -d bundle \
 	&& cd ${ROOT_WWW_PATH}/assets/frontend/bundle \
 	&& ../../../indexer > .index-xhr \
-    && cd ${ROOT_WWW_PATH}/assets/cores \
-    && ../../indexer > .index-xhr
+	&& cd ${ROOT_WWW_PATH}/assets/cores \
+ 	&& ../../indexer > .index-xhr
+
+RUN cd ${ROOT_WWW_PATH} \
+	&& rm -rf RetroArch.7z \
+	&& rm -rf ${ROOT_WWW_PATH}/assets/frontend/bundle.zip
 
 WORKDIR ${ROOT_WWW_PATH}
 
