@@ -38,12 +38,10 @@ RUN cd ${ROOT_WWW_PATH} \
 	&& cd ${ROOT_WWW_PATH}/assets/frontend/bundle \
 	&& ../../../indexer > .index-xhr \
 	&& cd ${ROOT_WWW_PATH}/assets/cores \
-	&& ../../indexer > .index-xhr
-
-RUN cd ${ROOT_WWW_PATH} \
-	&& rm -rf RetroArch.7z \
+	&& ../../indexer > .index-xhr \
+	&& rm -rf ${ROOT_WWW_PATH}/RetroArch.7z \
 	&& rm -rf ${ROOT_WWW_PATH}/assets/frontend/bundle.zip
-
+	
 WORKDIR ${ROOT_WWW_PATH}
 
 EXPOSE 80
