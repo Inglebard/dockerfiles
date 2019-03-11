@@ -1,7 +1,7 @@
 # Docker image inglebard/angular
 Angular
-[Github](https://github.com/Inglebard/dockerfiles/blob/master/retroarch-web/)
-[Dockerhub](https://hub.docker.com/r/inglebard/retroarch-web/)
+[Github](https://github.com/Inglebard/dockerfiles/tree/master/angular)
+[Dockerhub](https://hub.docker.com/r/inglebard/angular)
 
 ## Why use this image :
 
@@ -24,7 +24,7 @@ You may need to mount game app folder to /var/www/html.
 
 You can run this image like this:
 ```
-docker run -it -v angular_app:/var/www/html -p 4200:4200 angular:7.3.5
+docker run -it -v angular_app:/var/www/html -p 4200:4200 inglebard/angular:latest
 
 ```
 

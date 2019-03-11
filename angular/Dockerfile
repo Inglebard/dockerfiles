@@ -1,6 +1,6 @@
 # Angular in a container
 #
-# docker run -it -v angular_app:/var/www/html -p 4200:4200 angular:7.3.5
+# docker run -it -v angular_app:/var/www/html -p 4200:4200 inglebard/angular:latest
 #
 FROM node:10.15.3
 
