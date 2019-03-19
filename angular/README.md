@@ -22,7 +22,12 @@ You may need to mount game app folder to /var/www/html.
 
 ## How to use this image :
 
-You can run this image like this:
+You can create a project :
+```
+docker run -it -v angular_app:/var/www/html inglebard/angular:latest ng new --directory . myapp
+```
+
+You can serve the project like this:
 ```
 docker run -it -v angular_app:/var/www/html -p 4200:4200 inglebard/angular:latest
 
