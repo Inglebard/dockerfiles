@@ -41,15 +41,15 @@ RUN useradd --create-home --home-dir $HOME user \
 ENV LANG C.UTF-8
 
 #https://download-installer.cdn.mozilla.net/pub/firefox/releases/
-ENV FIREFOX_VERSION 65.0.2
+ENV FIREFOX_VERSION 66.0
 ENV FIREFOX_LANG en-US
 
 # download tor and check signature
 RUN cd /tmp \
 	&& curl -sSOL "https://download-installer.cdn.mozilla.net/pub/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/${FIREFOX_LANG}/firefox-${FIREFOX_VERSION}.tar.bz2" \
 	&& tar -vxj -C /opt -f firefox-${FIREFOX_VERSION}.tar.bz2 \
-	&& rm -rf firefox-${FIREFOX_VERSION}.tar.bz2 
-	
+	&& rm -rf firefox-${FIREFOX_VERSION}.tar.bz2
+
 # Not sure if usefull
 # COPY pulse-client.conf /etc/pulse/client.conf
 
