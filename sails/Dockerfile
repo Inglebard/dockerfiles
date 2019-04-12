@@ -1,6 +1,6 @@
-# Angular in a container
+# Sails in a container
 #
-# docker run -it -v angular_app:/var/www/html -p 4200:4200 inglebard/angular:latest
+# docker run -it -v sails_app:/var/www/html -p 4200:4200 inglebard/sails:latest
 #
 FROM node:lts
 
@@ -8,9 +8,9 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 
 ENV ROOT_WWW_PATH /var/www/html
-ENV ANGULAR_VERSION 7.3.8
+ENV SAILS_VERSION 1.1.0
 
-RUN npm install -g @angular/cli@${ANGULAR_VERSION} \
+RUN npm install -g sails@${ANGULAR_VERSION} \
   && rm -rf /tmp/* ~/.npm \
   && npm cache clear --force \
   && mkdir -p /var/www/html
@@ -21,4 +21,4 @@ WORKDIR ${ROOT_WWW_PATH}
 EXPOSE 4200
 
 
-CMD [ "ng", "serve", "--host", "0.0.0.0" ]
+CMD [ "sails", "lift" ]
