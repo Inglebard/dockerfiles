@@ -29,7 +29,7 @@ docker run -it -v sails_app:/var/www/html inglebard/sails:latest sails new /var/
 
 You can serve the project like this:
 ```
-docker run -it -v sails_app:/var/www/html -p 4200:4200 inglebard/sails:latest
+docker run -it -v sails_app:/var/www/html -p 1337:1337 inglebard/sails:latest
 
 ```
 
