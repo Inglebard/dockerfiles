@@ -21,4 +21,4 @@ WORKDIR ${ROOT_WWW_PATH}
 EXPOSE 4200
 
 
-CMD [ "ng", "serve", "--host", "0.0.0.0" ]
+CMD [ "sh", "-c", "ng serve --host 0.0.0.0" ]
