@@ -20,7 +20,7 @@ RUN apt-get update && apt-get install -y \
 
 # https://github.com/libretro/RetroArch/tree/master/pkg/emscripten
 # https://buildbot.libretro.com/stable/
-ENV RETROARCH_VERSION 1.7.6
+ENV RETROARCH_VERSION 1.7.7
 ENV ROOT_WWW_PATH /var/www/html
 
 
@@ -41,10 +41,9 @@ RUN cd ${ROOT_WWW_PATH} \
 	&& ../../indexer > .index-xhr \
 	&& rm -rf ${ROOT_WWW_PATH}/RetroArch.7z \
 	&& rm -rf ${ROOT_WWW_PATH}/assets/frontend/bundle.zip
-	
+
 WORKDIR ${ROOT_WWW_PATH}
 
 EXPOSE 80
 
 CMD [ "nginx", "-g", "daemon off;" ]
-
