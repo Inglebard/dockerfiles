@@ -8,7 +8,7 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 
 ENV ROOT_WWW_PATH /var/www/html
-ENV ANGULAR_VERSION 7.3.9
+ENV ANGULAR_VERSION 8.0.1
 
 RUN npm install -g @angular/cli@${ANGULAR_VERSION} \
   && rm -rf /tmp/* ~/.npm \
