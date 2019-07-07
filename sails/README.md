@@ -18,7 +18,7 @@ This image was created to develop sails app.
 * 1337
 
 ### Volumes :
-You may need to mount game app folder to /var/www/html.
+You may need to mount app folder to /var/www/html.
 
 ## How to use this image :
 
