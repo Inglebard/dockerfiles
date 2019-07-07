@@ -1,6 +1,6 @@
-# Sails in a container
+# Vue cli in a container
 #
-# docker run -it -v sails_app:/var/www/html -p 4200:4200 inglebard/sails:latest
+# docker run -it -v vue_app:/var/www/html -p 8080:8080 inglebard/cue-cli:latest
 #
 FROM node:lts
 
@@ -8,9 +8,9 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 
 ENV ROOT_WWW_PATH /var/www/html
-ENV SAILS_VERSION 1.2.3
+ENV VUECLI_VERSION 2.9.6
 
-RUN npm install -g sails@${SAILS_VERSION} \
+RUN npm install -g vue-cli@${VUECLI_VERSION} \
   && rm -rf /tmp/* ~/.npm \
   && npm cache clear --force \
   && mkdir -p /var/www/html
@@ -18,7 +18,7 @@ RUN npm install -g sails@${SAILS_VERSION} \
 WORKDIR ${ROOT_WWW_PATH}
 
 
-EXPOSE 4200
+EXPOSE 8080
 
 
-CMD [ "sails", "lift" ]
+CMD [ "sh", "-c", "npm run dev" ]

@@ -1,6 +1,6 @@
-# Angular in a container
+# Angular cli in a container
 #
-# docker run -it -v angular_app:/var/www/html -p 4200:4200 inglebard/angular:latest
+# docker run -it -v angular_app:/var/www/html -p 4200:4200 inglebard/angular-cli:latest
 #
 FROM node:lts
 
@@ -8,9 +8,9 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 
 ENV ROOT_WWW_PATH /var/www/html
-ENV ANGULAR_VERSION 8.0.4
+ENV ANGULARCLI_VERSION 8.1.0
 
-RUN npm install -g @angular/cli@${ANGULAR_VERSION} \
+RUN npm install -g @angular/cli@${ANGULARCLI_VERSION} \
   && rm -rf /tmp/* ~/.npm \
   && npm cache clear --force \
   && mkdir -p /var/www/html
