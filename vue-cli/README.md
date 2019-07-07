@@ -24,12 +24,24 @@ You may need to mount app folder to /var/www/html.
 
 You can create a project :
 ```
-docker run -it -v vue_app:/var/www/html inglebard/vue-cli:latest vue init webpack-simple .
+docker run -it --rm -v vue_app:/var/www/html inglebard/vue-cli:latest vue init webpack-simple .
+docker run -it --rm -v vue_app:/var/www/html inglebard/vue-cli:latest npm install
 ```
+
+Then edit webpack.config.js to have :
+```
+module.exports = {
+  //...
+  devServer: {
+    host: '0.0.0.0'
+  }
+};
+```
+or modify the `dev` script command with `--host 0.0.0.0`
 
 You can serve the project like this:
 ```
-docker run -it -v vue_app:/var/www/html -p 4200:4200 inglebard/vue-cli:latest
+docker run -it -v vue_app:/var/www/html -p 8080:8080 inglebard/vue-cli:latest
 
 ```
 
