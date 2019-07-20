@@ -21,4 +21,4 @@ WORKDIR ${ROOT_WWW_PATH}
 EXPOSE 8080
 
 
-CMD [ "sh", "-c", "npm run dev" ]
+CMD [ "sh", "-c", "npm run serve" ]

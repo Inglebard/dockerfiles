@@ -28,7 +28,7 @@ docker run -it --rm -v vue_app:/var/www/html inglebard/vue-cli:latest vue create
 docker run -it --rm -v vue_app:/var/www/html inglebard/vue-cli:latest npm install
 ```
 
-Then edit webpack.config.js to have :
+Then edit vue.config.js to have :
 ```
 module.exports = {
   //...
@@ -37,8 +37,6 @@ module.exports = {
   }
 };
 ```
-or modify the `dev` script command with `--host 0.0.0.0`
-
 You can serve the project like this:
 ```
 docker run -it -v vue_app:/var/www/html -p 8080:8080 inglebard/vue-cli:latest
