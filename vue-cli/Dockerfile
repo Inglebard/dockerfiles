@@ -8,9 +8,9 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 
 ENV ROOT_WWW_PATH /var/www/html
-ENV VUECLI_VERSION 2.9.6
+ENV VUECLI_VERSION 3.9.3
 
-RUN npm install -g vue-cli@${VUECLI_VERSION} \
+RUN npm install -g @vue/cli@${VUECLI_VERSION} \
   && rm -rf /tmp/* ~/.npm \
   && npm cache clear --force \
   && mkdir -p /var/www/html

@@ -24,7 +24,7 @@ You may need to mount app folder to /var/www/html.
 
 You can create a project :
 ```
-docker run -it --rm -v vue_app:/var/www/html inglebard/vue-cli:latest vue init webpack-simple .
+docker run -it --rm -v vue_app:/var/www/html inglebard/vue-cli:latest vue create .
 docker run -it --rm -v vue_app:/var/www/html inglebard/vue-cli:latest npm install
 ```
 
@@ -47,4 +47,4 @@ docker run -it -v vue_app:/var/www/html -p 8080:8080 inglebard/vue-cli:latest
 
 ## Note :
 
-The default command is `npm run dev`.
+The default command is `npm run serve`.
