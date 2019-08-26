@@ -25,7 +25,7 @@ ENV ROOT_WWW_PATH /var/www/html
 
 
 RUN cd ${ROOT_WWW_PATH} \
-	&& wget https://buildbot.libretro.com/nightly/emscripten/$(date +%Y-%m-%d)_RetroArch.7z \
+	&& wget https://buildbot.libretro.com/nightly/emscripten/$(date -d "yesterday" '+%Y-%m-%d')_RetroArch.7z \
 	&& 7z e -y $(date +%Y-%m-%d)_RetroArch.7z \
 	&& sed -i '/<script src="analytics.js"><\/script>/d' ./index.html \
 	&& cp canvas.png media/canvas.png \
@@ -47,4 +47,3 @@ WORKDIR ${ROOT_WWW_PATH}
 EXPOSE 80
 
 CMD [ "nginx", "-g", "daemon off;" ]
-
