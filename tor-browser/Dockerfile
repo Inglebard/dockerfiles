@@ -30,6 +30,7 @@ RUN apt-get update && apt-get install -y \
 	libxt6 \
 	libpulse0 \
 	libcanberra-gtk-module \
+	libcanberra-gtk3-module \
 	xz-utils \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
