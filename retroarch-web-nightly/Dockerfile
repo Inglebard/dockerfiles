@@ -46,4 +46,6 @@ WORKDIR ${ROOT_WWW_PATH}
 
 EXPOSE 80
 
-CMD [ "nginx", "-g", "daemon off;" ]
+COPY entrypoint.sh /
+
+CMD [ "sh", "/entrypoint.sh"]
