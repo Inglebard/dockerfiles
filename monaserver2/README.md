@@ -13,7 +13,10 @@ This image was created to use monaserver2.
 * monaserver2
 
 ### Ports :
-* 8080
+* 80
+* 554
+* 1935/udp
+* 1935
 
 ### Volumes :
 You may need to mount app folder to /usr/local/bin/www.
