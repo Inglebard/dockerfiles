@@ -52,6 +52,7 @@ RUN apk add --no-cache libgcc \
 	&& cp MonaServer /usr/local/bin \
 	&& rm -Rf /usr/src/MonaServer2 \
 	&& apk del .build-deps
+	&& ln -sf /proc/1/fd/1 /usr/local/bin/MonaServer.log/0.log
 
 WORKDIR /usr/local/bin
 
