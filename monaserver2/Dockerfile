@@ -46,8 +46,7 @@ RUN apk add --no-cache libgcc \
 	&& git clone https://github.com/MonaSolutions/MonaServer2.git \
 	&& cd MonaServer2 \
 	&& git checkout "$MonaServer2_VERSION" \
-	&& sed -i 's/_isInteractive = _isatty(_fileno(stdout)) ? true : false;/_isInteractive = _isatty(_fileno(stdout)) ? true : true;/g' MonaBase/sources/ConsoleLogger.cpp \
-	&& sed -i 's/_isInteractive = isatty(STDOUT_FILENO) ? true : false;/_isInteractive = isatty(STDOUT_FILENO) ? true : true;/g' MonaBase/sources/ConsoleLogger.cpp \
+	&& sed -i 's/bool enabled() const { return _isInteractive; }/bool enabled() const { return true; }/g' MonaBase/include/Mona/ConsoleLogger.h \
 	# don't know why /usr/local/include/ is ignored by default
 	&& cd MonaBase && make && cd ../MonaCore && make && cd ../MonaServer && make INCLUDES="-I/usr/local/include/"\
 	&& cp ../MonaBase/lib/libMonaBase.so ../MonaCore/lib/libMonaCore.so /usr/local/lib \
