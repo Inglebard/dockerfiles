@@ -1,5 +1,6 @@
 #
 # MonaServer2 Dockerfile
+# https://github.com/MonaSolutions/MonaServer2
 
 FROM alpine
 
@@ -10,8 +11,7 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 ENV LUAJIT_VERSION 2.1.0-beta3
 ENV LUAJIT_DOWNLOAD_SHA256 1ad2e34b111c802f9d0cdf019e986909123237a28c746b21295b63c9e785d9c3
-ENV MonaServer2_VERSION f7a754399c8a9e23b60ad358ef33bc408e42533e
-ENV MonaServer2_DOWNLOAD_SHA256 fd176fc50b83629d13fa295c976096d943b64ce03b6b751c3dae22f05777cabf
+ENV MonaServer2_VERSION 597570fe36af4b165d5f34b515f0660dd8380b0d
 
 # install prerequisites
 RUN apk add --no-cache libgcc \
