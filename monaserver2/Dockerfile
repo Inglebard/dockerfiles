@@ -1,6 +1,8 @@
 #
 # MonaServer2 Dockerfile
 # https://github.com/MonaSolutions/MonaServer2
+# docker run -it --name Mona -p 80:80 -p 1935:1935 -p 554:554 -p 1935:1935/udp inglebard/monaserver2
+
 
 FROM alpine
 
@@ -12,6 +14,9 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 ENV LUAJIT_VERSION 2.1.0-beta3
 ENV LUAJIT_DOWNLOAD_SHA256 1ad2e34b111c802f9d0cdf019e986909123237a28c746b21295b63c9e785d9c3
 ENV MonaServer2_VERSION 597570fe36af4b165d5f34b515f0660dd8380b0d
+ENV MonaJS_VERSION a2684c87cf1addf2bad89d726006aed8be24c789
+
+COPY ./monajsdockerpatch.diff /monajsdockerpatch.diff
 
 # install prerequisites
 RUN apk add --no-cache libgcc \
@@ -22,6 +27,7 @@ RUN apk add --no-cache libgcc \
 		make \
 		g++ \
 		git \
+		diffutils \
 # Build & install luajit
 	&& mkdir -p /usr/src \
 	&& cd /usr/src \
@@ -52,6 +58,13 @@ RUN apk add --no-cache libgcc \
 	&& cp ../MonaBase/lib/libMonaBase.so ../MonaCore/lib/libMonaCore.so /usr/local/lib \
 	&& cp MonaServer /usr/local/bin \
 	&& rm -Rf /usr/src/MonaServer2 \
+	&& mkdir -p /usr/local/bin/www/live \
+	&& cd /usr/local/bin/www \
+	&& git clone https://github.com/MonaSolutions/MonaJS.git \
+	&& cd MonaJS \
+	&& git checkout "$MonaJS_VERSION" \
+	&& git apply /monajsdockerpatch.diff \
+	&& rm /monajsdockerpatch.diff \
 	&& apk del .build-deps
 
 WORKDIR /usr/local/bin

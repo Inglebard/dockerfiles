@@ -1,0 +1,79 @@
+diff --git a/Base/Timer.js b/Base/Timer.js
+index 01c83e2..459a593 100644
+--- a/Base/Timer.js
++++ b/Base/Timer.js
+@@ -12,7 +12,7 @@ file, You can obtain one at https://mozilla.org/MPL/2.0/.
+ let _id = 0;
+ let _freeIds = new Array();
+ let _methods = new Map();
+-let _TimersWorker = new Worker("/Base/Timers.js"); // FIXME: needs to be configurable (or built-in using WebPack)
++let _TimersWorker = new Worker("/MonaJS/Base/Timers.js"); // FIXME: needs to be configurable (or built-in using WebPack)
+ _TimersWorker.onmessage = (e) => {
+     let method = _methods.get(e.data[0]);
+     if(method)
+@@ -32,4 +32,4 @@ export let Timer = {
+         _TimersWorker.postMessage([id, 0]);
+         _freeIds.push(id);
+     }
+-}
+\ No newline at end of file
++}
+diff --git a/Media/MP4Writer.js b/Media/MP4Writer.js
+index a51677a..73138de 100644
+--- a/Media/MP4Writer.js
++++ b/Media/MP4Writer.js
+@@ -87,6 +87,7 @@ class Frames {
+ export class MP4Writer {
+
+ 	constructor(bufferTimeMs) {
++    var bufferTimeMs = 1000;
+
+     if (!Number.isFinite(bufferTimeMs)) {
+       throw new Error('Need bufferTime argument');
+diff --git a/Media/Player.js b/Media/Player.js
+index 9083d68..3e08c63 100644
+--- a/Media/Player.js
++++ b/Media/Player.js
+@@ -235,10 +235,9 @@ export class Player {
+         this.onBegin && this.onBegin();
+
+         // FIXME: should not be here
+-        if(this._videoEl.autoplay && this._videoEl.muted)
++        if(this._video != undefined  && this._videoEl.autoplay && this._videoEl.muted)
+           this._video.play(); // fix a firefox issue with autoplay not working!
+
+-
+       }
+       this._time = tag.time = Util.AddDistance32(tag.time, this._seekTime - this._firstTimestamp);
+       if (tag.frame)
+diff --git a/Media/live.html b/Media/live.html
+index ca4c99f..9c09b80 100644
+--- a/Media/live.html
++++ b/Media/live.html
+@@ -29,7 +29,8 @@ video
+ #video_overlays {
+ 	position:absolute;
+ 	float:left;
+-    width:200px;
++	opacity:0.2;
++    width:250px;
+    	height:20px;
+ 	color: #fff;
+ 	background-color: rgba(0, 0, 0, 0.6);
+@@ -52,7 +53,8 @@ video
+ 		function load() {
+ 			var video = document.getElementById("video");
+
+-			let url = (location.protocol == "https:" ?  "wss://" : "ws://") + location.host + location.pathname + location.search;
++			//let url = (location.protocol == "https:" ?  "wss://" : "ws://") + location.host + location.pathname + location.search;
++			let url = (location.protocol == "https:" ?  "wss://" : "ws://") + location.host + '/' + location.search;
+ 			var player = new Player(video, new WSSource(url));
+ 			player.onBegin = function() {
+ 				console.log("begin");
+@@ -81,4 +83,4 @@ video
+ 	</video>
+
+ </body>
+-</html>
+\ No newline at end of file
++</html>
