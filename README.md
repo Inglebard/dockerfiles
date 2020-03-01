@@ -1,24 +1,38 @@
-# dockerfiles
-Some Dockerfiles
+# Docker image inglebard/angular
+Sails
+[Github](https://github.com/Inglebard/dockerfiles/tree/master/sails)
+[Dockerhub](https://hub.docker.com/r/inglebard/sails)
 
+## Why use this image :
 
+This image was created to develop sails app.
 
-angular-cli : https://github.com/Inglebard/dockerfiles/tree/angular-cli
+## Technical information :
 
-firefox : https://github.com/Inglebard/dockerfiles/tree/firefox
+### Softwares :
+* node
+* npm
+* sails
 
-monaserver2 : https://github.com/Inglebard/dockerfiles/tree/monaserver2
+### Ports :
+* 1337
 
-retroarch-web : https://github.com/Inglebard/dockerfiles/tree/retroarch-web
+### Volumes :
+You may need to mount app folder to /var/www/html.
 
-retroarch-web-nightly : https://github.com/Inglebard/dockerfiles/tree/retroarch-web-nightly
+## How to use this image :
 
-sails : https://github.com/Inglebard/dockerfiles/tree/sails
+You can create a project :
+```
+docker run -it -v sails_app:/var/www/html inglebard/sails:latest sails new /var/www/html
+```
 
-steam : https://github.com/Inglebard/dockerfiles/tree/steam
+You can serve the project like this:
+```
+docker run -it -v sails_app:/var/www/html -p 1337:1337 inglebard/sails:latest
 
-tor-browser : https://github.com/Inglebard/dockerfiles/tree/tor-browser
+```
 
-tor-relay : https://github.com/Inglebard/dockerfiles/tree/tor-relay
+## Note :
 
-vue-cli : https://github.com/Inglebard/dockerfiles/tree/vue-cli
+The default command is `sails lift`.
