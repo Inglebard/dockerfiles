@@ -1,6 +1,6 @@
 # Vue cli in a container
 #
-# docker run -it -v vue_app:/var/www/html -p 8080:8080 inglebard/cue-cli:latest
+# docker run -it -v vue_app:/var/www/html -p 8080:8080 inglebard/vue-cli:latest
 #
 FROM node:lts
 
