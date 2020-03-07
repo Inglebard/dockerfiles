@@ -1,24 +1,37 @@
-# dockerfiles
-Some Dockerfiles
+# Docker image inglebard/meteorjs
+Meteorjs
+[Github](https://github.com/Inglebard/dockerfiles/tree/master/meteorjs)
+[Dockerhub](https://hub.docker.com/r/inglebard/meteorjs)
 
+## Why use this image :
 
+This image was created to develop Meteorjs app.
 
-angular-cli : https://github.com/Inglebard/dockerfiles/tree/angular-cli
+## Technical information :
 
-firefox : https://github.com/Inglebard/dockerfiles/tree/firefox
+### Softwares :
+* node
+* npm
+* meteor
 
-monaserver2 : https://github.com/Inglebard/dockerfiles/tree/monaserver2
+### Ports :
+* 3000
 
-retroarch-web : https://github.com/Inglebard/dockerfiles/tree/retroarch-web
+### Volumes :
+You may need to mount app folder to :
+- /home/meteor/app/
 
-retroarch-web-nightly : https://github.com/Inglebard/dockerfiles/tree/retroarch-web-nightly
+## How to use this image :
 
-sails : https://github.com/Inglebard/dockerfiles/tree/sails
+You can create a project :
+```
+docker run -it --rm -v meteor_app:/var/www/html -p 3000:3000 inglebard/meteorjs:latest meteor create .
+```
+You can run the project :
+```
+docker run -it --rm -v meteor_app:/var/www/html -p 3000:3000 inglebard/meteorjs:latest meteor
+```
 
-steam : https://github.com/Inglebard/dockerfiles/tree/steam
+## Note :
 
-tor-browser : https://github.com/Inglebard/dockerfiles/tree/tor-browser
-
-tor-relay : https://github.com/Inglebard/dockerfiles/tree/tor-relay
-
-vue-cli : https://github.com/Inglebard/dockerfiles/tree/vue-cli
+The default command is `meteor`.
