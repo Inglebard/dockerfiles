@@ -2,7 +2,7 @@
 #
 # docker run -it -v meteor_app:/home/meteor/app -p 3000:3000 inglebard/meteorjs:latest meteor
 #
-FROM node:lts
+FROM debian:buster
 
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 

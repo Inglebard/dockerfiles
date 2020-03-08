@@ -10,8 +10,6 @@ This image was created to develop Meteorjs app.
 ## Technical information :
 
 ### Softwares :
-* node
-* npm
 * meteor
 
 ### Ports :
@@ -29,7 +27,7 @@ docker run -it --rm -v meteor_app:/var/www/html -p 3000:3000 inglebard/meteorjs:
 ```
 You can run the project :
 ```
-docker run -it --rm -v meteor_app:/var/www/html -p 3000:3000 inglebard/meteorjs:latest meteor
+docker run -it --rm -v meteor_app:/var/www/html -p 3000:3000 inglebard/meteorjs:latest
 ```
 
 ## Note :
