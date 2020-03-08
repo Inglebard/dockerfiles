@@ -12,7 +12,7 @@ ENV METOR_CONFIG_PATH /home/meteor/.meteor
 ENV NODE_ENV development
 
 RUN apt-get update \
-  && apt-get install -yq curl \
+  && apt-get install -yq curl procps \
   && rm -rf /var/lib/apt/lists/* \
   && useradd -ms /bin/bash meteor \
   && curl https://install.meteor.com/ | sh \
