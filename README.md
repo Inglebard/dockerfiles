@@ -21,13 +21,19 @@ You may need to mount app folder to :
 
 ## How to use this image :
 
+You may want to keep .meteor directory (this will copy .meteor) to avoid donwload meteor each time :
+```
+docker run -it --rm -v meteor_config:/tmp/meteorconfigtmp inglebard/meteorjs:latest bash /meteordockerinit.bash /tmp/meteorconfigtmp
+```
+
 You can create a project :
 ```
-docker run -it --rm -v meteor_app:/var/www/html -p 3000:3000 inglebard/meteorjs:latest meteor create .
+docker run -it --rm -v  meteor_config:/home/meteor/.meteor -v meteor_app:/home/meteor/app/ inglebard/meteorjs:latest meteor create .
 ```
+
 You can run the project :
 ```
-docker run -it --rm -v meteor_app:/var/www/html -p 3000:3000 inglebard/meteorjs:latest
+docker run -it --rm -v  meteor_config:/home/meteor/.meteor -v meteor_app:/home/meteor/app/ -p 3000:3000 inglebard/meteorjs:latest
 ```
 
 ## Note :

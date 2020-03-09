@@ -8,7 +8,7 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 
 ENV ROOT_APP_PATH /home/meteor/app
-ENV METOR_CONFIG_PATH /home/meteor/.meteor
+ENV METEOR_CONFIG_PATH_TMP /tmp/meteorconfigtmp
 ENV NODE_ENV development
 
 RUN apt-get update \
@@ -17,10 +17,14 @@ RUN apt-get update \
   && useradd -ms /bin/bash meteor \
   && curl https://install.meteor.com/ | sh \
   && mkdir -p ${ROOT_APP_PATH} \
-  && chown meteor:meteor ${ROOT_APP_PATH}
+  && chown meteor:meteor ${ROOT_APP_PATH} \
+  && mkdir -p ${METEOR_CONFIG_PATH_TMP} \
+  && chown meteor:meteor ${METEOR_CONFIG_PATH_TMP}
 
 USER meteor
 WORKDIR ${ROOT_APP_PATH}
+
+COPY meteordockerinit.bash /meteordockerinit.bash
 
 
 EXPOSE 3000
