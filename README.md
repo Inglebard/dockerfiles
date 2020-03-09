@@ -18,6 +18,7 @@ This image was created to develop Meteorjs app.
 ### Volumes :
 You may need to mount app folder to :
 - /home/meteor/app/
+- /home/meteor/.meteor/
 
 ## How to use this image :
 
