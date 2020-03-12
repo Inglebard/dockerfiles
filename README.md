@@ -22,3 +22,7 @@ tor-browser : https://github.com/Inglebard/dockerfiles/tree/tor-browser
 tor-relay : https://github.com/Inglebard/dockerfiles/tree/tor-relay
 
 vue-cli : https://github.com/Inglebard/dockerfiles/tree/vue-cli
+
+meteorjs : https://github.com/Inglebard/dockerfiles/tree/meteorjs
+
+reactjs : https://github.com/Inglebard/dockerfiles/tree/reactjs
