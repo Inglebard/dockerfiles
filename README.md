@@ -1,21 +1,21 @@
-# Docker image inglebard/vue-cli
-Vue Cli
-[Github](https://github.com/Inglebard/dockerfiles/tree/master/vue-cli)
-[Dockerhub](https://hub.docker.com/r/inglebard/vue-cli)
+# Docker image inglebard/reactjs
+Reactjs
+[Github](https://github.com/Inglebard/dockerfiles/tree/master/reactjs)
+[Dockerhub](https://hub.docker.com/r/inglebard/reactjs)
 
 ## Why use this image :
 
-This image was created to develop vue app.
+This image was created to develop reactjs app.
 
 ## Technical information :
 
 ### Softwares :
 * node
 * npm
-* vue-cli
+* create-react-app
 
 ### Ports :
-* 8080
+* 3000
 
 ### Volumes :
 You may need to mount app folder to /var/www/html.
@@ -24,25 +24,14 @@ You may need to mount app folder to /var/www/html.
 
 You can create a project :
 ```
-docker run -it --rm -v vue_app:/var/www/html inglebard/vue-cli:latest vue create .
-docker run -it --rm -v vue_app:/var/www/html inglebard/vue-cli:latest npm install
+docker run -it --rm -v react_app:/var/www/html inglebard/reactjs:latest create-react-app .
 ```
 
-Then edit vue.config.js to have :
+You can start the project like this:
 ```
-module.exports = {
-  //...
-  devServer: {
-    host: '0.0.0.0'
-  }
-};
-```
-You can serve the project like this:
-```
-docker run -it -v vue_app:/var/www/html -p 8080:8080 inglebard/vue-cli:latest
-
+docker run -it -v react_app:/var/www/html -p 8080:8080 inglebard/reactjs:latest
 ```
 
 ## Note :
 
-The default command is `npm run serve`.
+The default command is `npm start`.
