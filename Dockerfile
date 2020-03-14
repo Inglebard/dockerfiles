@@ -13,10 +13,11 @@ ENV REACT_VERSION 3.4.0
 RUN npm install -g create-react-app@${REACT_VERSION} \
   && rm -rf /tmp/* ~/.npm \
   && npm cache clear --force \
-  && mkdir -p /var/www/html
+  && mkdir -p ${ROOT_WWW_PATH}
 
 WORKDIR ${ROOT_WWW_PATH}
 
+USER node
 
 EXPOSE 3000
 
