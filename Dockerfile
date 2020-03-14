@@ -1,6 +1,6 @@
-# MeteorJs in a container
+# Meteor in a container
 #
-# docker run -it -v meteor_app:/home/meteor/app -p 3000:3000 inglebard/meteorjs:latest meteor
+# docker run -it -v meteor_app:/home/meteor/app -p 3000:3000 inglebard/meteor:latest meteor
 #
 FROM debian:buster
 

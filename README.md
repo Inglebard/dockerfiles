@@ -1,11 +1,11 @@
-# Docker image inglebard/meteorjs
-Meteorjs
-[Github](https://github.com/Inglebard/dockerfiles/tree/master/meteorjs)
-[Dockerhub](https://hub.docker.com/r/inglebard/meteorjs)
+# Docker image inglebard/meteor
+Meteor
+[Github](https://github.com/Inglebard/dockerfiles/tree/master/meteor)
+[Dockerhub](https://hub.docker.com/r/inglebard/meteor)
 
 ## Why use this image :
 
-This image was created to develop Meteorjs app.
+This image was created to develop Meteor app.
 
 ## Technical information :
 
@@ -24,17 +24,17 @@ You may need to mount app folder to :
 
 You may want to keep .meteor directory (this will copy .meteor) to avoid donwload meteor each time :
 ```
-docker run -it --rm -v meteor_config:/tmp/meteorconfigtmp inglebard/meteorjs:latest bash /meteordockerinit.bash /tmp/meteorconfigtmp
+docker run -it --rm -v meteor_config:/tmp/meteorconfigtmp inglebard/meteor:latest bash /meteordockerinit.bash /tmp/meteorconfigtmp
 ```
 
 You can create a project :
 ```
-docker run -it --rm -v  meteor_config:/home/meteor/.meteor -v meteor_app:/home/meteor/app/ inglebard/meteorjs:latest meteor create .
+docker run -it --rm -v  meteor_config:/home/meteor/.meteor -v meteor_app:/home/meteor/app/ inglebard/meteor:latest meteor create .
 ```
 
 You can run the project :
 ```
-docker run -it --rm -v  meteor_config:/home/meteor/.meteor -v meteor_app:/home/meteor/app/ -p 3000:3000 inglebard/meteorjs:latest
+docker run -it --rm -v  meteor_config:/home/meteor/.meteor -v meteor_app:/home/meteor/app/ -p 3000:3000 inglebard/meteor:latest
 ```
 
 ## Note :
