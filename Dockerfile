@@ -12,7 +12,8 @@ ENV ANGULARCLI_VERSION 9.0.5
 RUN npm install -g @angular/cli@${ANGULARCLI_VERSION} \
   && rm -rf /tmp/* ~/.npm \
   && npm cache clear --force \
-  && mkdir -p chown node:node ${ROOT_WWW_PATH}
+  && mkdir -p ${ROOT_WWW_PATH} \
+  && chown node:node ${ROOT_WWW_PATH}
 
 WORKDIR ${ROOT_WWW_PATH}
 
