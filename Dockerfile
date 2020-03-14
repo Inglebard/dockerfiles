@@ -14,7 +14,7 @@ RUN npm install -g @vue/cli@${VUECLI_VERSION} \
   && rm -rf /tmp/* ~/.npm \
   && npm cache clear --force \
   && mkdir -p ${ROOT_WWW_PATH} \
-  && chown node:node ${ROOT_WWW_PATH}
+  && chown node:node -R ${ROOT_WWW_PATH}
 
 WORKDIR ${ROOT_WWW_PATH}
 
