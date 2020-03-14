@@ -13,10 +13,12 @@ ENV SAILS_VERSION 1.2.3
 RUN npm install -g sails@${SAILS_VERSION} \
   && rm -rf /tmp/* ~/.npm \
   && npm cache clear --force \
-  && mkdir -p /var/www/html
+  && mkdir -p ${ROOT_WWW_PATH} \
+  && chown node:node ${ROOT_WWW_PATH}
 
 WORKDIR ${ROOT_WWW_PATH}
 
+USER node
 
 EXPOSE 4200
 
