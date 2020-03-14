@@ -13,10 +13,12 @@ ENV VUECLI_VERSION 4.2.3
 RUN npm install -g @vue/cli@${VUECLI_VERSION} \
   && rm -rf /tmp/* ~/.npm \
   && npm cache clear --force \
-  && mkdir -p /var/www/html
+  && mkdir -p ${ROOT_WWW_PATH} \
+  && chown node:node ${ROOT_WWW_PATH}
 
 WORKDIR ${ROOT_WWW_PATH}
 
+USER node
 
 EXPOSE 8080
 
