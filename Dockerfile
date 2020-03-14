@@ -13,7 +13,7 @@ RUN npm install -g @angular/cli@${ANGULARCLI_VERSION} \
   && rm -rf /tmp/* ~/.npm \
   && npm cache clear --force \
   && mkdir -p ${ROOT_WWW_PATH} \
-  && chown node:node ${ROOT_WWW_PATH}
+  && chown node:node -R ${ROOT_WWW_PATH}
 
 WORKDIR ${ROOT_WWW_PATH}
 
