@@ -6,17 +6,17 @@ FROM node:lts
 
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
-
 ENV ROOT_WWW_PATH /var/www/html
 ENV ANGULARCLI_VERSION 9.0.5
 
 RUN npm install -g @angular/cli@${ANGULARCLI_VERSION} \
   && rm -rf /tmp/* ~/.npm \
   && npm cache clear --force \
-  && mkdir -p /var/www/html
+  && mkdir -p chown node:node ${ROOT_WWW_PATH}
 
 WORKDIR ${ROOT_WWW_PATH}
 
+USER node
 
 EXPOSE 4200
 
