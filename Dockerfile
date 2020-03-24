@@ -5,7 +5,7 @@
 # -v /dev/shm:/dev/shm \
 # -e DISPLAY=unix$DISPLAY \
 # -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \
-# inglebard/firefox
+# inglebard/firefox --class=firefox-docker
 #
 FROM debian:buster
 
