@@ -5,7 +5,7 @@
 # -v /dev/shm:/dev/shm \
 # -e DISPLAY=unix$DISPLAY \
 # -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \
-# inglebard/tor-browser
+# inglebard/tor-browser --class=tor-docker
 #
 FROM debian:buster
 
