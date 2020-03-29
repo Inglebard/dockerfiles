@@ -48,7 +48,7 @@ You may need to have something like this :
 #		-p 9001:9001 \
 #		-p 9030:9030 \
 # 		--name tor-relay \
-  # 		jess/tor-relay -f /etc/tor/torrc.middle
+# 		jess/tor-relay -f /etc/tor/torrc.middle
 ```
 
 ## Note :
