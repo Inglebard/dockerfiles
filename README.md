@@ -1,28 +1,31 @@
-# dockerfiles
-Some Dockerfiles
+# Docker image inglebard/murmur
+murmur
+[Github](https://github.com/Inglebard/dockerfiles/tree/master/murmur)
+[Dockerhub](https://hub.docker.com/r/inglebard/murmur)
+
+## Why use this image :
+
+This image was created to run murmur with latest version.
+This directory is a fork from from https://github.com/mattikus/docker-murmur
+
+## Technical information :
+
+### Softwares :
+* murmur
+
+### Ports :
+* Your must specify the exact same port from /opt/murmur/data/murmur.ini in tcp and udp
+
+### Volumes :
+You may need to have something like this :
+* murmur-data:/opt/murmur/data
+
+## Note :
+
+You may want to edit '/opt/murmur/data/murmur.ini' before the first run.
+You can do it like that  `docker run --rm -it -v mumble-data:/opt/murmur/data inglebard/murmur sh` and then `vi /opt/murmur/data/murmur.ini`
 
 
+## How to use this image :
 
-angular-cli : https://github.com/Inglebard/dockerfiles/tree/angular-cli
-
-firefox : https://github.com/Inglebard/dockerfiles/tree/firefox
-
-monaserver2 : https://github.com/Inglebard/dockerfiles/tree/monaserver2
-
-retroarch-web : https://github.com/Inglebard/dockerfiles/tree/retroarch-web
-
-retroarch-web-nightly : https://github.com/Inglebard/dockerfiles/tree/retroarch-web-nightly
-
-sails : https://github.com/Inglebard/dockerfiles/tree/sails
-
-steam : https://github.com/Inglebard/dockerfiles/tree/steam
-
-tor-browser : https://github.com/Inglebard/dockerfiles/tree/tor-browser
-
-tor-relay : https://github.com/Inglebard/dockerfiles/tree/tor-relay
-
-vue-cli : https://github.com/Inglebard/dockerfiles/tree/vue-cli
-
-meteor : https://github.com/Inglebard/dockerfiles/tree/meteor
-
-reactjs : https://github.com/Inglebard/dockerfiles/tree/reactjs
+```docker run --rm -it -v mumble-data:/opt/murmur/data -p 64738:64738/tcp -p 64738:64738/udp inglebard/murmur```
