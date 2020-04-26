@@ -7,7 +7,7 @@ FROM node:lts
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 ENV ROOT_WWW_PATH /var/www/html
-ENV ANGULARCLI_VERSION 9.1.1
+ENV ANGULARCLI_VERSION 9.1.3
 
 RUN npm install -g @angular/cli@${ANGULARCLI_VERSION} \
   && rm -rf /tmp/* ~/.npm \
