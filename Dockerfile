@@ -5,7 +5,7 @@
 # -v /dev/shm:/dev/shm \
 # -e DISPLAY=unix$DISPLAY \
 # -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \
-# inglebard/firefox --class=firefox-docker
+# inglebard/firefox
 #
 FROM debian:buster
 
@@ -42,7 +42,7 @@ RUN useradd --create-home --home-dir $HOME user \
 ENV LANG C.UTF-8
 
 #https://download-installer.cdn.mozilla.net/pub/firefox/releases/
-ENV FIREFOX_VERSION 76.0.1
+ENV FIREFOX_VERSION 77.0
 ENV FIREFOX_LANG en-US
 
 # download tor and check signature
