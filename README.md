@@ -1,6 +1,6 @@
 # Docker image inglebard/reactjs
 Reactjs
-[Github](https://github.com/Inglebard/dockerfiles/tree/master/reactjs)
+[Github](https://github.com/Inglebard/dockerfiles/tree/reactjs)
 [Dockerhub](https://hub.docker.com/r/inglebard/reactjs)
 
 ## Why use this image :
