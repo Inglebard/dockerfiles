@@ -1,6 +1,6 @@
 # Docker image inglebard/tor-browser
 Another tor-browser image. Tested on archlinux with pulseaudio
-[Github](https://github.com/Inglebard/dockerfiles/blob/master/tor-browser/)
+[Github](https://github.com/Inglebard/dockerfiles/tree/tor-browser/)
 [Dockerhub](https://hub.docker.com/r/inglebard/tor-browser/)
 
 ## Why use this image :
@@ -13,7 +13,7 @@ This image was created to have sound with tor-browser on archlinux and pulseaudi
 * user : standard user
 
 ### Softwares :
-* tor-browser 
+* tor-browser
 
 ### Ports :
 * no port expose
@@ -43,6 +43,6 @@ inglebard/tor-browser --class=tor-docker
 ```
 
 ## Thanks
-This image was created from 
+This image was created from
 * "Jessie Frazelle <jess@linux.com>" https://hub.docker.com/r/jess/tor-browser/
 * "Guy Taylor <thebigguy.co.uk@gmail.com>" https://github.com/TheBiggerGuy/docker-pulseaudio-example
