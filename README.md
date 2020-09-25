@@ -1,6 +1,6 @@
 # Docker image inglebard/steam
 Steam
-[Github](https://github.com/Inglebard/dockerfiles/blob/master/steam/)
+[Github](https://github.com/Inglebard/dockerfiles/tree/steam/)
 [Dockerhub](https://hub.docker.com/r/inglebard/steam/)
 
 ## Why use this image :
