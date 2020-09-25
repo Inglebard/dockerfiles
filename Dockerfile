@@ -8,7 +8,7 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 
 ENV ROOT_WWW_PATH /var/www/html
-ENV VUECLI_VERSION 4.5.4
+ENV VUECLI_VERSION 4.5.6
 
 RUN npm install -g @vue/cli@${VUECLI_VERSION} \
   && rm -rf /tmp/* ~/.npm \
