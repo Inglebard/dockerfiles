@@ -1,6 +1,6 @@
 # Docker image inglebard/monaserver2
 MonaServer2
-[Github](https://github.com/Inglebard/dockerfiles/tree/master/monaserver2)
+[Github](https://github.com/Inglebard/dockerfiles/tree/monaserver2)
 [Dockerhub](https://hub.docker.com/r/inglebard/monaserver2)
 
 ## Why use this image :
