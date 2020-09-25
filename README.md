@@ -1,6 +1,6 @@
 # Docker image inglebard/retroarch-web-nightly
 Self-hosted archretro web player.
-[Github](https://github.com/Inglebard/dockerfiles/blob/master/retroarch-web-nightly/)
+[Github](https://github.com/Inglebard/dockerfiles/tree/retroarch-web-nightly/)
 [Dockerhub](https://hub.docker.com/r/inglebard/retroarch-web-nightly/)
 
 ## Why use this image :
@@ -27,5 +27,5 @@ docker run --rm -it -p 8080:80 inglebard/retroarch-web-nightly
 ```
 
 ## Thanks
-This image was created from 
+This image was created from
 * https://github.com/libretro/RetroArch/tree/master/pkg/emscripten
