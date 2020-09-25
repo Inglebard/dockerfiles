@@ -1,6 +1,6 @@
 # Docker image inglebard/tor-relay
 tor-relay
-[Github](https://github.com/Inglebard/dockerfiles/tree/master/tor-relay)
+[Github](https://github.com/Inglebard/dockerfiles/tree/tor-relay)
 [Dockerhub](https://hub.docker.com/r/inglebard/tor-relay)
 
 ## Why use this image :
