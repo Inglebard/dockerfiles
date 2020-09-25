@@ -1,6 +1,6 @@
 # Docker image inglebard/vue-cli
 Vue Cli
-[Github](https://github.com/Inglebard/dockerfiles/tree/master/vue-cli)
+[Github](https://github.com/Inglebard/dockerfiles/tree/vue-cli)
 [Dockerhub](https://hub.docker.com/r/inglebard/vue-cli)
 
 ## Why use this image :
