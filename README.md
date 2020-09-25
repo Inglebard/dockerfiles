@@ -1,6 +1,6 @@
 # Docker image inglebard/angular-cli
 Angular Cli
-[Github](https://github.com/Inglebard/dockerfiles/tree/master/angular-cli)
+[Github](https://github.com/Inglebard/dockerfiles/tree/angular-cli)
 [Dockerhub](https://hub.docker.com/r/inglebard/angular-cli)
 
 ## Why use this image :
