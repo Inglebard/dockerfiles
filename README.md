@@ -1,6 +1,6 @@
-# Docker image inglebard/angular
+# Docker image inglebard/sails
 Sails
-[Github](https://github.com/Inglebard/dockerfiles/tree/master/sails)
+[Github](https://github.com/Inglebard/dockerfiles/tree/sails)
 [Dockerhub](https://hub.docker.com/r/inglebard/sails)
 
 ## Why use this image :
