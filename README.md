@@ -1,6 +1,6 @@
 # Docker image inglebard/firefox
 Another firefox image. Tested on archlinux with pulseaudio
-[Github](https://github.com/Inglebard/dockerfiles/blob/master/firefox/)
+[Github](https://github.com/Inglebard/dockerfiles/tree/firefox)
 [Dockerhub](https://hub.docker.com/r/inglebard/firefox/)
 
 ## Why use this image :
@@ -44,6 +44,6 @@ inglebard/firefox --class=firefox-docker
 ```
 
 ## Thanks
-This image was created from 
+This image was created from
 * "Jessie Frazelle <jess@linux.com>" https://hub.docker.com/r/jess/tor-browser/
 * "Guy Taylor <thebigguy.co.uk@gmail.com>" https://github.com/TheBiggerGuy/docker-pulseaudio-example
