@@ -1,6 +1,6 @@
 # Docker image inglebard/murmur
 murmur
-[Github](https://github.com/Inglebard/dockerfiles/tree/master/murmur)
+[Github](https://github.com/Inglebard/dockerfiles/tree/murmur)
 [Dockerhub](https://hub.docker.com/r/inglebard/murmur)
 
 ## Why use this image :
