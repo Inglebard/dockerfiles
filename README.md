@@ -1,6 +1,6 @@
 # Docker image inglebard/retroarch-web
 Self-hosted retroarch web player.
-[Github](https://github.com/Inglebard/dockerfiles/blob/master/retroarch-web/)
+[Github](https://github.com/Inglebard/dockerfiles/tree/retroarch-web/)
 [Dockerhub](https://hub.docker.com/r/inglebard/retroarch-web/)
 
 ## Why use this image :
@@ -27,5 +27,5 @@ docker run --rm -it -p 8080:80 inglebard/retroarch-web
 ```
 
 ## Thanks
-This image was created from 
+This image was created from
 * https://github.com/libretro/RetroArch/tree/master/pkg/emscripten
