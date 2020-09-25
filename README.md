@@ -1,6 +1,6 @@
 # Docker image inglebard/meteor
 Meteor
-[Github](https://github.com/Inglebard/dockerfiles/tree/master/meteor)
+[Github](https://github.com/Inglebard/dockerfiles/tree/meteor)
 [Dockerhub](https://hub.docker.com/r/inglebard/meteor)
 
 ## Why use this image :
