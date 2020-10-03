@@ -76,5 +76,5 @@ USER user
 #debug
 #CMD ["pacat", "-vvvv", "/dev/urandom"]
 
-ENTRYPOINT ["/bin/bash"]
-CMD [ "/opt/tor-browser/Browser/start-tor-browser", "--log", "/dev/stdout" ]
+ENTRYPOINT ["/opt/tor-browser/Browser/start-tor-browser"]
+CMD [ "--log", "/dev/stdout" ]

@@ -38,7 +38,7 @@ docker run -t -i --rm -v $XDG_RUNTIME_DIR/pulse:$XDG_RUNTIME_DIR/pulse \
 -v /dev/shm:/dev/shm \
 -e DISPLAY=unix$DISPLAY \
 -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \
-inglebard/tor-browser --class=tor-docker
+inglebard/tor-browser --log /dev/stdout --class=tor-docker
 
 ```
 
