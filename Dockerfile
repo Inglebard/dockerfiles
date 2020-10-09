@@ -5,7 +5,7 @@ FROM busybox:latest
 #original dockerfile from "Matt Kemp <matt@mattikus.com>"
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
-ENV MURMUR_VERSION=1.3.2
+ENV MURMUR_VERSION=1.3.3
 
 # Download statically compiled murmur and install it to /opt/murmur
 ADD https://github.com/mumble-voip/mumble/releases/download/${MURMUR_VERSION}/murmur-static_x86-${MURMUR_VERSION}.tar.bz2 /opt/
