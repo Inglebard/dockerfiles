@@ -10,7 +10,7 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 ENV ROOT_APP_PATH /home/meteor/app
 ENV METEOR_CONFIG_PATH_TMP /tmp/meteorconfigtmp
 ENV NODE_ENV development
-ENV METEOR_VERSION 1.10.2
+ENV METEOR_VERSION 1.11.1
 
 
 RUN apt-get update \
