@@ -13,7 +13,7 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 ENV LUAJIT_VERSION 2.1.0-beta3
 ENV LUAJIT_DOWNLOAD_SHA256 1ad2e34b111c802f9d0cdf019e986909123237a28c746b21295b63c9e785d9c3
-ENV MonaServer2_VERSION fac07f47d839aa90cb559f920af3902198098f26
+ENV MonaServer2_VERSION 3c44773aaac0f658af9c4a827dcfca212b287695
 ENV MonaJS_VERSION a2684c87cf1addf2bad89d726006aed8be24c789
 
 COPY ./monajsdockerpatch.diff /monajsdockerpatch.diff
