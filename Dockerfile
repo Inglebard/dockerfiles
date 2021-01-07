@@ -26,19 +26,21 @@ ENV ROOT_WWW_PATH /var/www/html
 
 RUN cd ${ROOT_WWW_PATH} \
 	&& wget https://buildbot.libretro.com/nightly/emscripten/$(date -d "yesterday" '+%Y-%m-%d')_RetroArch.7z \
-	&& 7z e -y $(date -d "yesterday" '+%Y-%m-%d')_RetroArch.7z \
+	&& 7z x -y $(date -d "yesterday" '+%Y-%m-%d')_RetroArch.7z \
+	&& mv retroarch/* . \
+	&& rmdir retroarch \
 	&& sed -i '/<script src="analytics.js"><\/script>/d' ./index.html \
-	&& cp canvas.png media/canvas.png \
+	#&& cp canvas.png media/canvas.png \
 	&& chmod +x indexer \
-	&& mkdir -p ${ROOT_WWW_PATH}/assets/frontend \
+	#&& mkdir -p ${ROOT_WWW_PATH}/assets/frontend \
 	&& mkdir -p ${ROOT_WWW_PATH}/assets/cores \
-	&& cd ${ROOT_WWW_PATH}/assets/frontend \
-	&& wget https://buildbot.libretro.com/assets/frontend/bundle.zip \
-	&& unzip bundle.zip -d bundle \
+	#&& cd ${ROOT_WWW_PATH}/assets/frontend \
+	#&& wget https://buildbot.libretro.com/assets/frontend/bundle.zip \
+	#&& unzip bundle.zip -d bundle \
 	&& cd ${ROOT_WWW_PATH}/assets/frontend/bundle \
 	&& ../../../indexer > .index-xhr \
 	&& cd ${ROOT_WWW_PATH}/assets/cores \
- 	&& ../../indexer > .index-xhr \
+	&& ../../indexer > .index-xhr \
 	&& rm -rf ${ROOT_WWW_PATH}/RetroArch.7z \
 	&& rm -rf ${ROOT_WWW_PATH}/assets/frontend/bundle.zip
 
