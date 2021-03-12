@@ -8,7 +8,7 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 
 ENV ROOT_WWW_PATH /var/www/html
-ENV REACT_VERSION 4.0.1
+ENV REACT_VERSION 4.0.3
 
 RUN npm install -g create-react-app@${REACT_VERSION} \
   && rm -rf /tmp/* ~/.npm \
