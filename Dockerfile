@@ -26,7 +26,7 @@ ENV ROOT_WWW_PATH /var/www/html
 
 RUN cd ${ROOT_WWW_PATH} \
 	&& wget https://buildbot.libretro.com/stable/${RETROARCH_VERSION}/emscripten/RetroArch.7z \
-	&& 7z e -y RetroArch.7z \
+	&& 7z x -y RetroArch.7z \
 	&& mv retroarch/* . \
 	&& rmdir retroarch \
 	&& sed -i '/<script src="analytics.js"><\/script>/d' ./index.html \
