@@ -1,5 +1,5 @@
 # Docker image inglebard/sendmail
-exim
+sendmail
 [Github](https://github.com/Inglebard/dockerfiles/tree/sendmail)
 [Dockerhub](https://hub.docker.com/r/inglebard/sendmail)
 
