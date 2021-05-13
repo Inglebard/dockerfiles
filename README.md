@@ -28,3 +28,5 @@ tor-browser : https://github.com/Inglebard/dockerfiles/tree/tor-browser
 tor-relay : https://github.com/Inglebard/dockerfiles/tree/tor-relay
 
 vue-cli : https://github.com/Inglebard/dockerfiles/tree/vue-cli
+
+exim : https://github.com/Inglebard/dockerfiles/tree/exim
