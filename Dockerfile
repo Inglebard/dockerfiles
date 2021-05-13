@@ -1,5 +1,5 @@
 
-# Angular cli in a container
+# exim in a container
 #
 # docker run -it inglebard/exim:latest
 #
