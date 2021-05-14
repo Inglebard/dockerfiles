@@ -5,7 +5,7 @@ sendmail
 
 ## Why use this image :
 
-WIP
+This image was created to be used with msmtp
 
 ## Technical information :
 
@@ -21,5 +21,5 @@ WIP
 
 You can create a project :
 ```
-docker run -it inglebard/sendmail:latest
+docker run -it -p 25:25 inglebard/sendmail:latest
 ```
