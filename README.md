@@ -11,7 +11,7 @@ Used to log container with log driver.
 ## Technical information :
 
 ### Softwares :
-* exim
+* rsyslog
 
 ### Ports :
 * 514
