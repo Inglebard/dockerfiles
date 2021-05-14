@@ -19,6 +19,6 @@ COPY sendmail.mc /etc/mail/sendmail.mc
 COPY access /etc/mail/access
 
 RUN chmod u+x /entrypoint.sh
-RUN makemap hash /etc/mail/access.db < /etc/mail/access
+RUN makemap hash /etc/mail/access < /etc/mail/access
 RUN export DEBIAN_FRONTEND=noninteractive | /usr/sbin/sendmailconfig --no-reload
 ENTRYPOINT ["/bin/sh", "-c", "/entrypoint.sh"]
