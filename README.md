@@ -32,3 +32,5 @@ vue-cli : https://github.com/Inglebard/dockerfiles/tree/vue-cli
 exim : https://github.com/Inglebard/dockerfiles/tree/exim
 
 sendmail : https://github.com/Inglebard/dockerfiles/tree/sendmail
+
+rsyslog : https://github.com/Inglebard/dockerfiles/tree/rsyslog
