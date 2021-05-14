@@ -5,7 +5,7 @@ exim
 
 ## Why use this image :
 
-WIP
+This image was created to be used with msmtp
 
 ## Technical information :
 
