@@ -6,6 +6,7 @@ rsyslog
 ## Why use this image :
 
 Based on : https://github.com/rsyslog/rsyslog-docker/tree/master/appliance
+Used to log container with log driver.
 
 ## Technical information :
 
