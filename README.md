@@ -20,5 +20,5 @@ WIP
 
 You can create a project :
 ```
-docker run -it inglebard/exim:latest
+docker run -it -p 25:25 inglebard/exim:latest
 ```
