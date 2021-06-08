@@ -7,7 +7,7 @@ on:
   pull_request:
     branches: [ retroarch-web-nightly ]
   schedule:
-    - cron:  '0 22 * * *'
+    - cron:  '0 20 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
