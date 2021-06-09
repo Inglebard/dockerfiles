@@ -1,0 +1,26 @@
+name: inglebard/murmur
+
+on:
+  push:
+    branches: [ murmur ]
+  pull_request:
+    branches: [ murmur ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: murmur
+    - name: docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}   
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: docker build inglebard/murmur
+      run: |
+        docker build . -t inglebard/murmur
+    - name: docker push
+      run: |
+        docker push inglebard/murmur
