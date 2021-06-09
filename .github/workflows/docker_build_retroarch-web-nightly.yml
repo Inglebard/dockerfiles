@@ -1,0 +1,29 @@
+
+name: inglebard/retroarch-web-nightly
+
+on:
+  push:
+    branches: [ retroarch-web-nightly ]
+  pull_request:
+    branches: [ retroarch-web-nightly ]
+  schedule:
+    - cron:  '0 20 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: retroarch-web-nightly
+    - name: docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}   
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: docker build inglebard/retroarch-web-nightly
+      run: |
+        docker build . -t inglebard/retroarch-web-nightly
+    - name: docker push
+      run: |
+        docker push inglebard/retroarch-web-nightly
