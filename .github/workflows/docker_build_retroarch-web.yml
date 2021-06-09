@@ -1,0 +1,26 @@
+name: inglebard/retroarch-web
+
+on:
+  push:
+    branches: [ retroarch-web ]
+  pull_request:
+    branches: [ retroarch-web ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: retroarch-web
+    - name: docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}   
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: docker build inglebard/retroarch-web
+      run: |
+        docker build . -t inglebard/retroarch-web
+    - name: docker push
+      run: |
+        docker push inglebard/retroarch-web
