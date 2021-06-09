@@ -23,3 +23,4 @@ jobs:
         docker build . -t inglebard/angular-cli
     - name: docker push
       run: |
+        docker push inglebard/angular-cli
