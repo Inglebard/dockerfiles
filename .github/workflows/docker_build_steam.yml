@@ -1,0 +1,26 @@
+name: inglebard/steam
+
+on:
+  push:
+    branches: [ steam ]
+  pull_request:
+    branches: [ steam ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: steam
+    - name: docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}   
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+    - name: docker build inglebard/steam
+      run: |
+        docker build . -t inglebard/steam
+    - name: docker push
+      run: |
+        docker push inglebard/steam
