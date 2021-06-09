@@ -5,6 +5,8 @@ on:
     branches: [ steam ]
   pull_request:
     branches: [ steam ]
+  schedule:
+    - cron:  '0 20 20 * *'
 jobs:
   build:
     runs-on: ubuntu-latest

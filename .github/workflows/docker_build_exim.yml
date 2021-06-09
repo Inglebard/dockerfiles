@@ -5,6 +5,8 @@ on:
     branches: [ exim ]
   pull_request:
     branches: [ exim ]
+  schedule:
+    - cron:  '0 20 20 * *'
 jobs:
   build:
     runs-on: ubuntu-latest

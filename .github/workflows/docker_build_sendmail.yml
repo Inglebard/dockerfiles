@@ -5,6 +5,8 @@ on:
     branches: [ sendmail ]
   pull_request:
     branches: [ sendmail ]
+  schedule:
+    - cron:  '0 20 20 * *'
 jobs:
   build:
     runs-on: ubuntu-latest
