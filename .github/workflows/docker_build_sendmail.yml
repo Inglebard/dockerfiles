@@ -1,0 +1,28 @@
+name: inglebard/sendmail
+
+on:
+  push:
+    branches: [ sendmail ]
+  pull_request:
+    branches: [ sendmail ]
+  schedule:
+    - cron:  '0 20 20 * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: sendmail
+    - name: docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_USER }}   
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
+      run: |
+        echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
+    - name: docker build inglebard/sendmail
+      run: |
+        docker build . -t inglebard/sendmail
+    - name: docker push
+      run: |
+        docker push inglebard/sendmail
