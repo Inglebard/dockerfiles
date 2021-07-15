@@ -20,4 +20,4 @@ jobs:
         echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
     - name: docker buildx and push inglebard/retroarch-web
       run: |
-        docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t inglebard/retroarch-web --push
+        docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t inglebard/retroarch-web --push .
