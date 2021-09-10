@@ -8,7 +8,7 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
 
 ENV ROOT_WWW_PATH /var/www/html
-ENV SAILS_VERSION 1.4.3
+ENV SAILS_VERSION 1.4.4
 
 RUN npm install -g sails@${SAILS_VERSION} \
   && rm -rf /tmp/* ~/.npm \
