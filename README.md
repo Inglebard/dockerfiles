@@ -40,15 +40,15 @@ You may need to have something like this :
 ## How to use this image :
 
 ```
-#	docker run -d \
-#		--restart always \
-#		-v /etc/localtime:/etc/localtime:ro \
-#		-v tor-var:/var/lib/tor/.tor \
-#		-v tor-etc:/etc/tor \
-#		-p 9001:9001 \
-#		-p 9030:9030 \
-# 		--name tor-relay \
-# 		jess/tor-relay -f /etc/tor/torrc.middle
+docker run -d \
+    --restart always \
+		-v /etc/localtime:/etc/localtime:ro \
+		-v tor-var:/var/lib/tor/.tor \
+		-v tor-etc:/etc/tor \
+		-p 9001:9001 \
+		-p 9030:9030 \
+ 		--name tor-relay \
+ 		inglebard/tor-relay -f /etc/tor/torrc.middle
 ```
 
 ## Note :
