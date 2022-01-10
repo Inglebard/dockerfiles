@@ -7,7 +7,7 @@
 # -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \
 # inglebard/tor-browser --class=tor-docker
 #
-FROM debian:buster
+FROM debian:bullseye
 
 #original dockerfile from "Jessie Frazelle <jess@linux.com>" https://hub.docker.com/r/jess/tor-browser/
 # and Guy Taylor <thebigguy.co.uk@gmail.com> https://github.com/TheBiggerGuy/docker-pulseaudio-example
@@ -43,7 +43,7 @@ RUN useradd --create-home --home-dir $HOME user \
 ENV LANG C.UTF-8
 
 # https://www.torproject.org/projects/torbrowser.html.en
-ENV TOR_VERSION 11.0.2
+ENV TOR_VERSION 11.0.3
 ENV TOR_LANG en-US
 # ENV TOR_FINGERPRINT 0x4E2C6E8793298290
 
