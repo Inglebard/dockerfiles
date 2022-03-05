@@ -2,7 +2,7 @@
 #
 # docker run --rm -it -p 8080:80 retroarch-web-nightly
 #
-FROM debian:buster
+FROM debian:bullseye
 
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
