@@ -1,4 +1,4 @@
-FROM ubuntu:focal
+FROM ubuntu:jammy
 
 #original dockerfile from "https://github.com/mumble-voip/mumble/blob/master/Dockerfile"
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
@@ -82,4 +82,4 @@ RUN mkdir /var/lib/murmur && \
 EXPOSE 64738/tcp 64738/udp 50051
 USER murmur
 
-CMD /usr/bin/mumble-server -v -fg -ini /etc/murmur/murmur.ini
+CMD bash -c "/usr/bin/mumble-server -v -fg -ini /opt/murmur/data/murmur.ini"
