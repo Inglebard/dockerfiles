@@ -1,4 +1,4 @@
-FROM ubuntu:jammy
+FROM ubuntu:focal
 
 #original dockerfile from "https://github.com/mumble-voip/mumble/blob/master/Dockerfile"
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
@@ -13,10 +13,7 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 	git \
 	build-essential \
 	cmake \
-	qtbase5-dev \
-	qtchooser \
-	qt5-qmake \
-	qtbase5-dev-tools \
+	qt5-default \
 	pkg-config \
 	libboost-dev \
 	libasound2-dev \
