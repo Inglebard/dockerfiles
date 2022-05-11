@@ -77,7 +77,13 @@ COPY --from=0 /root/mumble/scripts/murmur.ini /etc/murmur/murmur.ini
 
 RUN mkdir /var/lib/murmur && \
 	chown --verbose murmur:murmur /var/lib/murmur && \
-	sed -i 's/^database=$/database=\/var\/lib\/murmur\/murmur.sqlite/' /etc/murmur/murmur.ini
+	mkdir /opt/murmur/data && \
+	chown --verbose murmur:murmur /opt/murmur/data
+
+COPY --from=0 /root/mumble/scripts/murmur.ini /opt/murmur/data/murmur.ini
+
+
+RUN sed -i 's/^database=$/database=\/opt\/murmur\/data\/murmur.sqlite/' /etc/murmur/murmur.ini
 
 EXPOSE 64738/tcp 64738/udp 50051
 USER murmur
