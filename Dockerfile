@@ -13,6 +13,10 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 	git \
 	build-essential \
 	cmake \
+	qtbase5-dev \
+	qtchooser \
+	qt5-qmake \
+	qtbase5-dev-tools \
 	pkg-config \
 	libboost-dev \
 	libasound2-dev \
