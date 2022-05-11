@@ -77,7 +77,7 @@ COPY --from=0 /root/mumble/scripts/murmur.ini /etc/murmur/murmur.ini
 
 RUN mkdir /var/lib/murmur && \
 	chown --verbose murmur:murmur /var/lib/murmur && \
-	mkdir /opt/murmur/data && \
+	mkdir -p /opt/murmur/data && \
 	chown --verbose murmur:murmur /opt/murmur/data
 
 COPY --from=0 /root/mumble/scripts/murmur.ini /opt/murmur/data/murmur.ini
