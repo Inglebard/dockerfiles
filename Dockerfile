@@ -14,7 +14,6 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
 	build-essential \
 	cmake \
 	pkg-config \
-	qt5-default \
 	libboost-dev \
 	libasound2-dev \
 	libssl-dev \
