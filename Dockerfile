@@ -2,7 +2,7 @@
 #
 # docker run -it -v meteor_app:/home/meteor/app -p 3000:3000 inglebard/meteor:latest meteor
 #
-FROM debian:buster
+FROM debian:bullseye
 
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
@@ -10,7 +10,7 @@ LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 ENV ROOT_APP_PATH /home/meteor/app
 ENV METEOR_CONFIG_PATH_TMP /tmp/meteorconfigtmp
 ENV NODE_ENV development
-ENV METEOR_VERSION 2.2
+ENV METEOR_VERSION 2.7.3
 
 
 RUN apt-get update \
