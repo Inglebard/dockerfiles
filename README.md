@@ -42,6 +42,21 @@ inglebard/tor-browser --log /dev/stdout --class=tor-docker
 
 ```
 
+## Notes
+
+-----
+https://github.com/Inglebard/dockerfiles/issues/8 
+
+If you have the following error message or similar: 
+```
+Authorization required, but no authorization protocol specified
+Unable to init server: Broadway display type not supported: unix:0
+Error: cannot open display: unix:0
+```
+You may required to allow the docker user X access with the following command :
+`xhost +"local:docker@"`
+-----
+
 ## Thanks
 This image was created from
 * "Jessie Frazelle <jess@linux.com>" https://hub.docker.com/r/jess/tor-browser/
