@@ -3,7 +3,7 @@ FROM ubuntu:focal
 #original dockerfile from "https://github.com/mumble-voip/mumble/blob/master/Dockerfile"
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
-ENV MURMUR_VERSION 1.4.274
+ENV MURMUR_VERSION 1.4.287
 
 # needed to install tzdata
 ARG DEBIAN_FRONTEND=noninteractive
