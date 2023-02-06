@@ -22,7 +22,7 @@ FROM alpine:edge
 #original dockerfile from "Jessie Frazelle <jess@linux.com>" https://github.com/jessfraz/dockerfiles/tree/master/tor-relay
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
-ENV TOR_VERSION 0.4.7.11
+ENV TOR_VERSION 0.4.7.13
 
 RUN adduser -S -D -H -h /var/lib/tor -s /sbin/nologin -g tor tor 2>/dev/null \
 	&& mkdir /src \
