@@ -8,7 +8,7 @@
 
 # This image was tested with opensource driver. AMD or NVIDIA drivers may failed
 # Require ubuntu 18.04, issue with 16.04 and debconf-set-selections with docker
-FROM ubuntu
+FROM ubuntu:22.04
 
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
