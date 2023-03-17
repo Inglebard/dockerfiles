@@ -44,7 +44,7 @@ ENV LANG C.UTF-8
 
 # https://www.torproject.org/projects/torbrowser.html.en
 ENV TOR_VERSION 12.0.3
-ENV TOR_LANG en-US
+ENV TOR_LANG ALL
 # ENV TOR_FINGERPRINT 0x4E2C6E8793298290
 
 # download tor and check signature
