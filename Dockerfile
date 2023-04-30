@@ -44,6 +44,7 @@ RUN cd /tmp \
 	&& bash start.sh \
 	&& mv /opt/easy-diffusion/scripts/on_sd_start.sh.ori /opt/easy-diffusion/scripts/on_sd_start.sh \
 	&& mv /opt/easy-diffusion/scripts/on_env_start.sh.ori /opt/easy-diffusion/scripts/on_env_start.sh \
+	&& echo '{"render_devices": "auto", "update_branch": "main", "ui": {"open_browser_on_start": false}, "net": {"listen_port": 9000,"listen_to_network": true}}' > /opt/easy-diffusion/scripts/config.json \
 	&& chown -R user:user /opt/easy-diffusion/
 
 
