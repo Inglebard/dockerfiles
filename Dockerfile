@@ -1,4 +1,4 @@
-# Run tor browser in a container
+# Run firefox browser in a container
 #
 # docker run -t -i --rm --volume=$XDG_RUNTIME_DIR/pulse:$XDG_RUNTIME_DIR/pulse \
 # -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -7,9 +7,9 @@
 # -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \
 # inglebard/firefox
 #
-FROM debian:buster
+FROM debian:bullseye
 
-#original dockerfile from "Jessie Frazelle <jess@linux.com>" https://hub.docker.com/r/jess/tor-browser/
+#original dockerfile from "Jessie Frazelle <jess@linux.com>" https://hub.docker.com/r/jess/firefox/
 # and Guy Taylor <thebigguy.co.uk@gmail.com> https://github.com/TheBiggerGuy/docker-pulseaudio-example
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
@@ -42,10 +42,9 @@ RUN useradd --create-home --home-dir $HOME user \
 ENV LANG C.UTF-8
 
 #https://download-installer.cdn.mozilla.net/pub/firefox/releases/
-ENV FIREFOX_VERSION 111.0
+ENV FIREFOX_VERSION 112.0.2
 ENV FIREFOX_LANG en-US
 
-# download tor and check signature
 RUN cd /tmp \
 	&& curl -sSOL "https://download-installer.cdn.mozilla.net/pub/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/${FIREFOX_LANG}/firefox-${FIREFOX_VERSION}.tar.bz2" \
 	&& tar -vxj -C /opt -f firefox-${FIREFOX_VERSION}.tar.bz2 \
