@@ -30,7 +30,7 @@ You can run this image like this:
 ```
 docker run -t -i --rm \
 -v /dev/shm:/dev/shm \
--p 9000:9000
+-p 9000:9000 \
 inglebard/stable-diffusion-ui
 
 ```
