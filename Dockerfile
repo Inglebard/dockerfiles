@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y \
 RUN useradd --create-home --home-dir $HOME user \
 	&& chown -R user:user $HOME \
 	&& mkdir /opt/easy-diffusion/ \
-	&& chowm -R user:user /opt/easy-diffusion/
+	&& chown -R user:user /opt/easy-diffusion/
 
 
 
@@ -52,7 +52,6 @@ RUN cd /tmp \
 	&& mv /opt/easy-diffusion/scripts/on_sd_start.sh.ori /opt/easy-diffusion/scripts/on_sd_start.sh \
 	&& mv /opt/easy-diffusion/scripts/on_env_start.sh.ori /opt/easy-diffusion/scripts/on_env_start.sh \
 	&& echo '{"render_devices": "auto", "update_branch": "main", "ui": {"open_browser_on_start": false}, "net": {"listen_port": 9000,"listen_to_network": true}}' > /opt/easy-diffusion/scripts/config.json \
-	&& chown -R user:user /opt/easy-diffusion/ \
 	&& rm -r /home/user/.cache /home/user/.conda
 
 
