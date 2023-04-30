@@ -34,3 +34,5 @@ exim : https://github.com/Inglebard/dockerfiles/tree/exim
 sendmail : https://github.com/Inglebard/dockerfiles/tree/sendmail
 
 rsyslog : https://github.com/Inglebard/dockerfiles/tree/rsyslog
+
+stable-diffusion-ui : https://github.com/Inglebard/dockerfiles/tree/stable-diffusion-ui
