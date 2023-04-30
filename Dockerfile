@@ -53,7 +53,7 @@ RUN cd /tmp \
 	&& mv /opt/easy-diffusion/scripts/on_sd_start.sh.ori /opt/easy-diffusion/scripts/on_sd_start.sh \
 	&& mv /opt/easy-diffusion/scripts/on_env_start.sh.ori /opt/easy-diffusion/scripts/on_env_start.sh \
 	&& echo '{"render_devices": "auto", "update_branch": "main", "ui": {"open_browser_on_start": false}, "net": {"listen_port": 9000,"listen_to_network": true}}' > /opt/easy-diffusion/scripts/config.json \
-	&& rm -r /home/user/.cache /home/user/.conda
+	&& rm -r /home/user/.conda
 
 
 #EXPOSE 9000
