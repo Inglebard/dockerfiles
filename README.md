@@ -1,36 +1,40 @@
-# dockerfiles
-Some Dockerfiles
+# Docker image inglebard/stable-diffusion-ui
+[Github](https://github.com/Inglebard/dockerfiles/tree/stable-diffusion-ui)
+[Dockerhub](https://hub.docker.com/r/inglebard/stable-diffusion-ui/)
+
+## Why use this image :
+
+This image was created to have a docker image of https://github.com/cmdr2/stable-diffusion-ui
+## Technical information :
+
+### Users :
+* user : standard user
+
+### Softwares :
+* cmdr2/stable-diffusion-ui
+
+### Ports :
+* cmdr2/stable-diffusion-ui expose port on 9000
+
+### Volumes :
+You may need :
+* /opt/easy-diffusion/
+* /dev/shm
+
+And you should propably pass the GPU
 
 
+## How to use this image :
 
-angular-cli : https://github.com/Inglebard/dockerfiles/tree/angular-cli
+You can run this image like this:
+```
+docker run -t -i --rm \
+-v /dev/shm:/dev/shm \
+-p 9000:9000
+inglebard/stable-diffusion-ui
 
-firefox : https://github.com/Inglebard/dockerfiles/tree/firefox
+```
 
-meteor : https://github.com/Inglebard/dockerfiles/tree/meteor
-
-monaserver2 : https://github.com/Inglebard/dockerfiles/tree/monaserver2
-
-murmur : https://github.com/Inglebard/dockerfiles/tree/murmur
-
-reactjs : https://github.com/Inglebard/dockerfiles/tree/reactjs
-
-retroarch-web : https://github.com/Inglebard/dockerfiles/tree/retroarch-web
-
-retroarch-web-nightly : https://github.com/Inglebard/dockerfiles/tree/retroarch-web-nightly
-
-sails : https://github.com/Inglebard/dockerfiles/tree/sails
-
-steam : https://github.com/Inglebard/dockerfiles/tree/steam
-
-tor-browser : https://github.com/Inglebard/dockerfiles/tree/tor-browser
-
-tor-relay : https://github.com/Inglebard/dockerfiles/tree/tor-relay
-
-vue-cli : https://github.com/Inglebard/dockerfiles/tree/vue-cli
-
-exim : https://github.com/Inglebard/dockerfiles/tree/exim
-
-sendmail : https://github.com/Inglebard/dockerfiles/tree/sendmail
-
-rsyslog : https://github.com/Inglebard/dockerfiles/tree/rsyslog
+## Thanks
+This image was created from
+* https://github.com/cmdr2/stable-diffusion-ui
