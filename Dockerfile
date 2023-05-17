@@ -25,8 +25,10 @@ ENV ROOT_WWW_PATH /var/www/html
 
 
 RUN cd ${ROOT_WWW_PATH} \
-	&& wget https://buildbot.libretro.com/nightly/emscripten/$(date -d "yesterday" '+%Y-%m-%d')_RetroArch.7z \
-	&& 7z x -y $(date -d "yesterday" '+%Y-%m-%d')_RetroArch.7z \
+	#&& wget https://buildbot.libretro.com/nightly/emscripten/$(date -d "yesterday" '+%Y-%m-%d')_RetroArch.7z \
+	#&& 7z x -y $(date -d "yesterday" '+%Y-%m-%d')_RetroArch.7z \
+	&& wget https://buildbot.libretro.com/nightly/emscripten/RetroArch.7z \
+	&& 7z x -y RetroArch.7z \
 	&& mv retroarch/* . \
 	&& rmdir retroarch \
 	&& sed -i '/<script src="analytics.js"><\/script>/d' ./index.html \
