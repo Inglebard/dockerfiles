@@ -4,7 +4,7 @@
 #
 # Based on : https://github.com/rsyslog/rsyslog-docker/tree/master/appliance
 
-FROM ubuntu:22.04
+FROM ubuntu:23.04
 
 SHELL ["/bin/bash", "-c"]
 
