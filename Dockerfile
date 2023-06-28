@@ -42,7 +42,7 @@ RUN useradd --create-home --home-dir $HOME user \
 ENV LANG C.UTF-8
 
 #https://download-installer.cdn.mozilla.net/pub/firefox/releases/
-ENV FIREFOX_VERSION 112.0.2
+ENV FIREFOX_VERSION 114.0.2
 ENV FIREFOX_LANG en-US
 
 RUN cd /tmp \
