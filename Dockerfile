@@ -3,7 +3,7 @@
 # docker run -it inglebard/sendmail:latest
 #
 
-FROM ubuntu:22.04
+FROM ubuntu:23.04
 
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
