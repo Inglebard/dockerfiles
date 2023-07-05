@@ -47,8 +47,8 @@ RUN cd /tmp \
 	&& sed -i 's/#exec .\/scripts\/on_sd_start.sh/exec .\/scripts\/on_sd_start.sh/g' /opt/easy-diffusion/scripts/on_env_start.sh \
 	&& cp /opt/easy-diffusion/scripts/on_sd_start.sh /opt/easy-diffusion/scripts/on_sd_start.sh.ori \
 	&& cp /opt/easy-diffusion/scripts/on_env_start.sh /opt/easy-diffusion/scripts/on_env_start.sh.ori \
-	&& sed -i '87,91d' /opt/easy-diffusion/scripts/on_sd_start.sh \
-	&& sed -i '11,43d' /opt/easy-diffusion/scripts/on_env_start.sh \
+	&& head -n -5 /opt/easy-diffusion/scripts/on_sd_start.sh.ori > /opt/easy-diffusion/scripts/on_sd_start.sh \
+	&& sed -i '19,56d' /opt/easy-diffusion/scripts/on_env_start.sh \
 	&& bash start.sh \
 	&& mv /opt/easy-diffusion/scripts/on_sd_start.sh.ori /opt/easy-diffusion/scripts/on_sd_start.sh \
 	&& mv /opt/easy-diffusion/scripts/on_env_start.sh.ori /opt/easy-diffusion/scripts/on_env_start.sh \
