@@ -35,7 +35,7 @@ USER user
 ENV LANG C.UTF-8
 
 #https://github.com/cmdr2/stable-diffusion-ui/releases
-ENV STABLE_DIFFUSION_UI_VERSION v2.5.41
+ENV STABLE_DIFFUSION_UI_VERSION v2.5.41a
 
 RUN cd /tmp \
 	&& curl -sSOL "https://github.com/cmdr2/stable-diffusion-ui/releases/download/${STABLE_DIFFUSION_UI_VERSION}/Easy-Diffusion-Linux.zip" \
