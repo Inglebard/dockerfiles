@@ -27,7 +27,7 @@ ENV TOR_VERSION 0.4.8.5
 RUN adduser -S -D -H -h /var/lib/tor -s /sbin/nologin -g tor tor 2>/dev/null \
 	&& mkdir /src \
 	&& cd /src \
-	&& apk add --no-cache bash build-base autoconf automake libevent-dev git libcap-dev libseccomp-dev libevent-dev openssl1.1-compat-dev ca-certificates zlib-dev xz-dev zstd-dev \
+	&& apk add --no-cache bash build-base autoconf automake libevent-dev git libcap-dev libseccomp-dev libevent-dev ca-certificates zlib-dev xz-dev zstd-dev \
 	&& git clone https://gitlab.torproject.org/tpo/core/tor.git \
 	&& cd tor \
 	&& git checkout tags/tor-${TOR_VERSION} \
