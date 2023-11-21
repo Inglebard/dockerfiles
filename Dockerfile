@@ -44,7 +44,7 @@ RUN cd ${ROOT_WWW_PATH} \
 	&& cd ${ROOT_WWW_PATH}/assets/cores \
 	&& ../../indexer > .index-xhr \
 	&& rm -rf ${ROOT_WWW_PATH}/RetroArch.7z \
-	&& rm -rf ${ROOT_WWW_PATH}/assets/frontend/bundle.zip
+	&& rm -rf ${ROOT_WWW_PATH}/assets/frontend/bundle.zip*
 
 WORKDIR ${ROOT_WWW_PATH}
 
