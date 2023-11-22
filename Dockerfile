@@ -42,7 +42,7 @@ RUN cd ${ROOT_WWW_PATH} \
 	#&& unzip bundle.zip -d bundle \
 	&& cd ${ROOT_WWW_PATH}/assets/frontend/ \
 	&& cat ${ROOT_WWW_PATH}/assets/frontend/bundle.zip* > bundle.zip \
-	&& unzip bundle.zip -d bundle \
+	&& unzip bundle.zip -d . \
 	&& rm -rf ${ROOT_WWW_PATH}/assets/frontend/bundle.zip \
 	&& cd ${ROOT_WWW_PATH}/assets/frontend/bundle \
 	&& ../../../indexer > .index-xhr \
