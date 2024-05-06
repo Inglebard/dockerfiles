@@ -7,7 +7,7 @@
 # -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \
 # inglebard/firefox
 #
-FROM debian:bullseye
+FROM debian:bookworm
 
 #original dockerfile from "Jessie Frazelle <jess@linux.com>" https://hub.docker.com/r/jess/firefox/
 # and Guy Taylor <thebigguy.co.uk@gmail.com> https://github.com/TheBiggerGuy/docker-pulseaudio-example
@@ -42,7 +42,7 @@ RUN useradd --create-home --home-dir $HOME user \
 ENV LANG C.UTF-8
 
 #https://download-installer.cdn.mozilla.net/pub/firefox/releases/
-ENV FIREFOX_VERSION 119.0
+ENV FIREFOX_VERSION 125.0.3
 ENV FIREFOX_LANG en-US
 
 RUN cd /tmp \
