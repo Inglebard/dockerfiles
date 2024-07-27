@@ -2,7 +2,7 @@
 #
 # docker run --rm -it -p 8080:80 inglebard/retroarch-web
 #
-FROM debian:bullseye
+FROM debian:bookworm
 
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
