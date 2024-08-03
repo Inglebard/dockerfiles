@@ -1,10 +1,10 @@
-name: inglebard/tor-relay
+name: inglebard/borgbackup
 
 on:
   push:
-    branches: [ tor-relay ]
+    branches: [ borgbackup ]
   pull_request:
-    branches: [ tor-relay ]
+    branches: [ borgbackup ]
   schedule:
     - cron:  '0 20 20 * *'
   workflow_dispatch:
@@ -15,16 +15,16 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: tor-relay
+        ref: borgbackup
     - name: docker login
       env:
         DOCKER_USER: ${{ secrets.DOCKER_USER }}   
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
       run: |
         echo $DOCKER_PASSWORD | docker login -u $DOCKER_USER --password-stdin
-    - name: docker build inglebard/tor-relay
+    - name: docker build inglebard/borgbackup
       run: |
-        docker build . -t inglebard/tor-relay
+        docker build . -t inglebard/borgbackup
     - name: docker push
       run: |
-        docker push inglebard/tor-relay
+        docker push inglebard/borgbackup
