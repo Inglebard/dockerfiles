@@ -26,9 +26,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive  apt-get install -y \
 	dirmngr \
 	gnupg \
 	libgl1-mesa-dri \
-	libgl1-mesa-glx \
 	libgl1-mesa-dri:i386 \
-	libgl1-mesa-glx:i386 \
 	libc6:i386 \
 	libxrender1 \
 	libx11-xcb-dev \
