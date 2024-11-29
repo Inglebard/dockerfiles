@@ -5,7 +5,7 @@
 # -p 9000:9000 \
 # inglebard/stable-diffusion-ui
 #
-FROM debian:bullseye
+FROM debian:bookworm
 
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
@@ -35,7 +35,7 @@ USER user
 ENV LANG C.UTF-8
 
 #https://github.com/cmdr2/stable-diffusion-ui/releases
-ENV STABLE_DIFFUSION_UI_VERSION v2.5.41a
+ENV STABLE_DIFFUSION_UI_VERSION v3.0.9
 
 RUN cd /tmp \
 	&& curl -sSOL "https://github.com/cmdr2/stable-diffusion-ui/releases/download/${STABLE_DIFFUSION_UI_VERSION}/Easy-Diffusion-Linux.zip" \
@@ -48,7 +48,7 @@ RUN cd /tmp \
 	&& cp /opt/easy-diffusion/scripts/on_sd_start.sh /opt/easy-diffusion/scripts/on_sd_start.sh.ori \
 	&& cp /opt/easy-diffusion/scripts/on_env_start.sh /opt/easy-diffusion/scripts/on_env_start.sh.ori \
 	&& head -n -5 /opt/easy-diffusion/scripts/on_sd_start.sh.ori > /opt/easy-diffusion/scripts/on_sd_start.sh \
-	&& sed -i '11,43d' /opt/easy-diffusion/scripts/on_env_start.sh \
+	&& sed -i '23,59d' /opt/easy-diffusion/scripts/on_env_start.sh \
 	&& bash start.sh \
 	&& mv /opt/easy-diffusion/scripts/on_sd_start.sh.ori /opt/easy-diffusion/scripts/on_sd_start.sh \
 	&& mv /opt/easy-diffusion/scripts/on_env_start.sh.ori /opt/easy-diffusion/scripts/on_env_start.sh \
