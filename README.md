@@ -11,8 +11,6 @@ meteor : https://github.com/Inglebard/dockerfiles/tree/meteor
 
 monaserver2 : https://github.com/Inglebard/dockerfiles/tree/monaserver2
 
-murmur : https://github.com/Inglebard/dockerfiles/tree/murmur
-
 reactjs : https://github.com/Inglebard/dockerfiles/tree/reactjs
 
 retroarch-web : https://github.com/Inglebard/dockerfiles/tree/retroarch-web
