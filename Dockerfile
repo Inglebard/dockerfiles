@@ -46,9 +46,9 @@ ENV FIREFOX_VERSION 140.0.4
 ENV FIREFOX_LANG en-US
 
 RUN cd /tmp \
-	&& curl -sSOL "https://download-installer.cdn.mozilla.net/pub/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/${FIREFOX_LANG}/firefox-${FIREFOX_VERSION}.tar.bz2" \
-	&& tar -vxj -C /opt -f firefox-${FIREFOX_VERSION}.tar.bz2 \
-	&& rm -rf firefox-${FIREFOX_VERSION}.tar.bz2
+	&& curl -sSOL "https://download-installer.cdn.mozilla.net/pub/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/${FIREFOX_LANG}/firefox-${FIREFOX_VERSION}.tar.xz" \
+	&& tar -vxj -C /opt -f firefox-${FIREFOX_VERSION}.tar.xz \
+	&& rm -rf firefox-${FIREFOX_VERSION}.tar.xz
 
 # Not sure if usefull
 # COPY pulse-client.conf /etc/pulse/client.conf
