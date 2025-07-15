@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
 	libx11-xcb1 \
 	libxt6 \
 	libpulse0 \
-	bzip2 \
+	xz-utils \
 	libcanberra-gtk-module \
 	libcanberra-gtk3-module \
 	--no-install-recommends \
@@ -47,7 +47,7 @@ ENV FIREFOX_LANG en-US
 
 RUN cd /tmp \
 	&& curl -sSOL "https://download-installer.cdn.mozilla.net/pub/firefox/releases/${FIREFOX_VERSION}/linux-x86_64/${FIREFOX_LANG}/firefox-${FIREFOX_VERSION}.tar.xz" \
-	&& tar -vxj -C /opt -f firefox-${FIREFOX_VERSION}.tar.xz \
+	&& tar -vx -C /opt -f firefox-${FIREFOX_VERSION}.tar.xz \
 	&& rm -rf firefox-${FIREFOX_VERSION}.tar.xz
 
 # Not sure if usefull
