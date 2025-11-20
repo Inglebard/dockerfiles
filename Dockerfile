@@ -2,7 +2,7 @@
 #
 # docker run --rm -it -p 8080:80 retroarch-web-nightly
 #
-FROM debian:bookworm
+FROM debian:trixie
 
 LABEL maintainer "David 'Inglebard' RICQ <davidricq87@orange.fr>"
 
