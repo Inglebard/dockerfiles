@@ -7,7 +7,7 @@
 # -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \
 # inglebard/firefox
 #
-FROM debian:bookworm
+FROM debian:trixie
 
 #original dockerfile from "Jessie Frazelle <jess@linux.com>" https://hub.docker.com/r/jess/firefox/
 # and Guy Taylor <thebigguy.co.uk@gmail.com> https://github.com/TheBiggerGuy/docker-pulseaudio-example
@@ -22,15 +22,14 @@ RUN apt-get update && apt-get install -y \
 	libasound2 \
 	libdbus-glib-1-2 \
 	libgtk-3-0 \
-	libgl1-mesa-dri \
-	libgl1-mesa-glx \
+	mesa-utils \
+	libgl1 \
 	libxrender1 \
 	libx11-xcb-dev \
 	libx11-xcb1 \
 	libxt6 \
 	libpulse0 \
 	xz-utils \
-	libcanberra-gtk-module \
 	libcanberra-gtk3-module \
 	--no-install-recommends \
 	&& rm -rf /var/lib/apt/lists/*
@@ -42,7 +41,7 @@ RUN useradd --create-home --home-dir $HOME user \
 ENV LANG C.UTF-8
 
 #https://download-installer.cdn.mozilla.net/pub/firefox/releases/
-ENV FIREFOX_VERSION 140.0.4
+ENV FIREFOX_VERSION 145.0.1
 ENV FIREFOX_LANG en-US
 
 RUN cd /tmp \
