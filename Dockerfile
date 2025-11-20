@@ -7,7 +7,7 @@
 # -e PULSE_SERVER=unix:$XDG_RUNTIME_DIR/pulse/native \
 # inglebard/tor-browser --class=tor-docker
 #
-FROM debian:bookworm
+FROM debian:trixie
 
 #original dockerfile from "Jessie Frazelle <jess@linux.com>" https://hub.docker.com/r/jess/tor-browser/
 # and Guy Taylor <thebigguy.co.uk@gmail.com> https://github.com/TheBiggerGuy/docker-pulseaudio-example
@@ -23,14 +23,14 @@ RUN apt-get update && apt-get install -y \
 	libasound2 \
 	libdbus-glib-1-2 \
 	libgtk-3-0 \
-	libgl1-mesa-dri \
-	libgl1-mesa-glx \
+	mesa-utils \
+	libgl1 \
 	libxrender1 \
 	libx11-xcb-dev \
 	libx11-xcb1 \
 	libxt6 \
 	libpulse0 \
-	libcanberra-gtk-module \
+	xz-utils \
 	libcanberra-gtk3-module \
 	xz-utils \
 	--no-install-recommends \
@@ -43,7 +43,7 @@ RUN useradd --create-home --home-dir $HOME user \
 ENV LANG C.UTF-8
 
 # https://www.torproject.org/projects/torbrowser.html.en
-ENV TOR_VERSION 14.5.4
+ENV TOR_VERSION 15.0.2
 ENV TOR_LANG ALL
 # ENV TOR_FINGERPRINT 0x4E2C6E8793298290
 
