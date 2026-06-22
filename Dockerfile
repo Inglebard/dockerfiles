@@ -43,7 +43,7 @@ RUN useradd --create-home --home-dir $HOME user \
 ENV LANG C.UTF-8
 
 # https://www.torproject.org/projects/torbrowser.html.en
-ENV TOR_VERSION 15.0.2
+ENV TOR_VERSION 15.0.16
 ENV TOR_LANG ALL
 # ENV TOR_FINGERPRINT 0x4E2C6E8793298290
 
